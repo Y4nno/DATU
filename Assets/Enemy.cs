@@ -17,9 +17,20 @@ public class Enemy : MonoBehaviour
     protected float recoilTimer;
     protected Rigidbody2D rb;
     // Start is called before the first frame update
+
+    [Header("Health")]
+    [SerializeField][Range(0, 5)] float attack_range = 1;
+    [SerializeField][Range(0, 5)] float attack_delay = 1;
+    [SerializeField][Range(0, 10)] float attack_cooldown = 1;
+    float attack_duration;
+    float cooldown;
+    [SerializeField] GameObject Attackbox;
+    float player_distance;
+    [SerializeField] bool ready_to_attack;
+
     protected virtual void Start()
     {
-        
+
     }
     protected virtual void Awake()
     {
@@ -29,13 +40,13 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        if(health <= 0)
+        if (health <= 0)
         {
             Destroy(gameObject);
         }
-        if(isRecoiling)
+        if (isRecoiling)
         {
-            if(recoilTimer < recoilLength)
+            if (recoilTimer < recoilLength)
             {
                 recoilTimer += Time.deltaTime;
             }
@@ -50,14 +61,14 @@ public class Enemy : MonoBehaviour
     public virtual void EnemyHit(float _damageDone, Vector2 _hitDirection, float _hitForce)
     {
         health -= _damageDone;
-        if(!isRecoiling)
+        if (!isRecoiling)
         {
             rb.AddForce(-_hitForce * recoilFactor * _hitDirection);
         }
     }
     protected void OnTriggerStay2D(Collider2D _other)
     {
-        if(_other.CompareTag("Player") && !PlayerController.Instance.pState.invincible)
+        if (_other.CompareTag("Player") && !PlayerController.Instance.pState.invincible)
         {
             Attack();
         }
@@ -66,5 +77,7 @@ public class Enemy : MonoBehaviour
     {
         PlayerController.Instance.TakeDamage(damage);
     }
+
     
+
 }
