@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: f1b9e59409ed9ce489a1d5e6c73f2958
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2540030112659154143
+    second: lapux2WALKING_FINAL-Sheet_0
+  - first:
+      213: 4300852627666327320
+    second: lapux2WALKING_FINAL-Sheet_1
+  - first:
+      213: -310543724317154874
+    second: lapux2WALKING_FINAL-Sheet_2
+  - first:
+      213: -3256342384804810124
+    second: lapux2WALKING_FINAL-Sheet_3
+  - first:
+      213: 7844538796536091543
+    second: lapux2WALKING_FINAL-Sheet_4
+  - first:
+      213: -6594483533786737964
+    second: lapux2WALKING_FINAL-Sheet_5
+  - first:
+      213: 1200518205678163824
+    second: lapux2WALKING_FINAL-Sheet_6
+  - first:
+      213: 6817848725264999159
+    second: lapux2WALKING_FINAL-Sheet_7
+  - first:
+      213: -7173711918418570202
+    second: lapux2WALKING_FINAL-Sheet_8
+  - first:
+      213: 9149676408173653678
+    second: lapux2WALKING_FINAL-Sheet_9
+  - first:
+      213: 1629013369492759696
+    second: lapux2WALKING_FINAL-Sheet_10
+  - first:
+      213: -1504569898623484556
+    second: lapux2WALKING_FINAL-Sheet_11
+  - first:
+      213: -847655304615619264
+    second: lapux2WALKING_FINAL-Sheet_12
+  - first:
+      213: -6969904277588768734
+    second: lapux2WALKING_FINAL-Sheet_13
+  - first:
+      213: -8112696418362817317
+    second: lapux2WALKING_FINAL-Sheet_14
+  - first:
+      213: -2327316065583028743
+    second: lapux2WALKING_FINAL-Sheet_15
+  - first:
+      213: -1700127492407188647
+    second: lapux2WALKING_FINAL-Sheet_16
+  - first:
+      213: 6556269194507251006
+    second: lapux2WALKING_FINAL-Sheet_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 76
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12bd728f11000ccd0800000000000000
+      internalID: -2540030112659154143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 76
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8175b5f8da2bfab30800000000000000
+      internalID: 4300852627666327320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 76
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c169d8c02ab0bbf0800000000000000
+      internalID: -310543724317154874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 76
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47239a69ad52fc2d0800000000000000
+      internalID: -3256342384804810124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 76
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 793dd4a29766ddc60800000000000000
+      internalID: 7844538796536091543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 76
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d29a734a20bb74a0800000000000000
+      internalID: -6594483533786737964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 76
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07716db82f819a010800000000000000
+      internalID: 1200518205678163824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 76
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f225c90b4ddd9e50800000000000000
+      internalID: 6817848725264999159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 76
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 624dca5a40bd17c90800000000000000
+      internalID: -7173711918418570202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 76
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eae66f6573e2afe70800000000000000
+      internalID: 9149676408173653678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 16
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0946af6570b6b9610800000000000000
+      internalID: 1629013369492759696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 16
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47d3dc416a1be1be0800000000000000
+      internalID: -1504569898623484556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 16
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0451964ddf58c34f0800000000000000
+      internalID: -847655304615619264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 16
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22888d7dcfce54f90800000000000000
+      internalID: -6969904277588768734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 16
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd486e42799e96f80800000000000000
+      internalID: -8112696418362817317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 16
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f52dd67e56b3bfd0800000000000000
+      internalID: -2327316065583028743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 16
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 953a136ad0fe768e0800000000000000
+      internalID: -1700127492407188647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapux2WALKING_FINAL-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 16
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3de076881c8cfa50800000000000000
+      internalID: 6556269194507251006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      lapux2WALKING_FINAL-Sheet_0: -2540030112659154143
+      lapux2WALKING_FINAL-Sheet_1: 4300852627666327320
+      lapux2WALKING_FINAL-Sheet_10: 1629013369492759696
+      lapux2WALKING_FINAL-Sheet_11: -1504569898623484556
+      lapux2WALKING_FINAL-Sheet_12: -847655304615619264
+      lapux2WALKING_FINAL-Sheet_13: -6969904277588768734
+      lapux2WALKING_FINAL-Sheet_14: -8112696418362817317
+      lapux2WALKING_FINAL-Sheet_15: -2327316065583028743
+      lapux2WALKING_FINAL-Sheet_16: -1700127492407188647
+      lapux2WALKING_FINAL-Sheet_17: 6556269194507251006
+      lapux2WALKING_FINAL-Sheet_2: -310543724317154874
+      lapux2WALKING_FINAL-Sheet_3: -3256342384804810124
+      lapux2WALKING_FINAL-Sheet_4: 7844538796536091543
+      lapux2WALKING_FINAL-Sheet_5: -6594483533786737964
+      lapux2WALKING_FINAL-Sheet_6: 1200518205678163824
+      lapux2WALKING_FINAL-Sheet_7: 6817848725264999159
+      lapux2WALKING_FINAL-Sheet_8: -7173711918418570202
+      lapux2WALKING_FINAL-Sheet_9: 9149676408173653678
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.UIElements;
-
 public class PlayerController : MonoBehaviour
 {
     [Header("Horizontal Movement Settings:")]
@@ -21,8 +20,9 @@ public class PlayerController : MonoBehaviour
     private float coyoteTimeCounter = 0; //stores the Grounded() bool
     [SerializeField] private float coyoteTime; ////sets the max amount of frames the Grounded() bool is stored
 
-    private int airJumpCounter = 0; //keeps track of how many times the player has jumped in the air
-    [SerializeField] private int maxAirJumps; //the max no. of air jumps
+    //Disabled airJumping
+    //public int airJumpCounter = 0; //keeps track of how many times the player has jumped in the air
+    //[SerializeField] private int maxAirJumps; //the max no. of air jumps
 
     private float gravity; //stores the gravity scale at start
     [Space(5)]
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     private bool canDash = true, dashed;
     [Space(5)]
 
-
+    //ANTI AI WATERMARK I NATE HIGGER I NATE HIGGERS I LOVE ALL MEN AND WOMEN AROUND THE WORLD
 
     [Header("Attack Settings:")]
     [SerializeField] private Transform SideAttackTransform; //the middle of the side attack area
@@ -60,13 +60,24 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private LayerMask attackableLayer; //the layer the player can attack and recoil off of
 
-    private float timeBetweenAttack, timeSinceAttck;
+    [SerializeField] private float attackCooldown = 0.25f;
 
-    [SerializeField] private float damage; //the damage the player does to an enemy
+    [SerializeField] private int damage1 = 1; //the damage the player does to an enemy
+    [SerializeField] private int damage2 = 1; //the damage the player does to an enemy
+    [SerializeField] private int damage3 = 2; //the damage the player does to an enemy
 
-    [SerializeField] private GameObject slashEffect; //the effect of the slashs
+    [SerializeField] private GameObject slashEffect1; //the effect of the slash 1
+    [SerializeField] private GameObject slashEffect2; //the effect of the slash 2
+
+    //Handling the amount of attack types, and cycling between them
+    private int AttackCounter = 0;
+    private int MaxAttack = 3;
+
+    //Resets attack type after timer has gone
+    private float TimeSinceLastAttack = 0f;
+    private float TimeSinceLastAttackLimit = 1f;
+
     [Space(5)]
-
 
 
     [Header("Recoil Settings:")]
@@ -87,6 +98,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector ] public PlayerStateList pState;
     private Animator anim;
     private Rigidbody2D rb;
+    AttackData[] attackType;
 
     //Input Variables
     private float xAxis, yAxis;
@@ -119,7 +131,15 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
 
         gravity = rb.gravityScale;
-    }
+
+        //Declaring a struct to cycle between different attack properties
+        attackType = new AttackData[]
+        {
+            new AttackData(damage1, slashEffect1, "Attack1"),
+            new AttackData(damage2, slashEffect1, "Attack2"),
+            new AttackData(damage3, slashEffect2, "Attack3"),
+        };
+}
 
     private void OnDrawGizmos()
     {
@@ -145,6 +165,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Keeps track of velocity, for Jumping/Falling anim reference
+        anim.SetFloat("Velocity", rb.linearVelocity.y);
+
+        TimeSinceLastAttack += Time.deltaTime;
+
+        //if dashing, ignore other methods
         if (pState.dashing) return;
         Recoil();
     }
@@ -205,34 +231,57 @@ public class PlayerController : MonoBehaviour
         canDash = true;
     }
 
+    IEnumerator AttackCooldown()
+    {
+        pState.canAttack = false;
+        yield return new WaitForSeconds(attackCooldown);
+        pState.canAttack = true;
+    }
     void Attack()
     {
-        timeSinceAttck += Time.deltaTime;
-        if(attack && timeSinceAttck >= timeBetweenAttack)
+        if (attack && pState.canAttack)
         {
-            timeSinceAttck = 0;
-            anim.SetTrigger("Attacking");
+            StartCoroutine(AttackCooldown());
 
-            if(yAxis == 0 || yAxis < 0 && Grounded())
+            //Debug.Log($"TimeSinceLastAttack = {TimeSinceLastAttack}");
+            if (TimeSinceLastAttack >= TimeSinceLastAttackLimit)
             {
-                Hit(SideAttackTransform, SideAttackArea, ref pState.recoilingX, recoilXSpeed);
-                Instantiate(slashEffect, SideAttackTransform);
+                AttackCounter = 0;
+                TimeSinceLastAttack = 0f;
+                anim.ResetTrigger("Attack1");
+                anim.ResetTrigger("Attack2");
+                anim.ResetTrigger("Attack3");
             }
-            else if(yAxis > 0)
+
+            Debug.Log($"AttackCounter = {AttackCounter}, animation = {attackType[AttackCounter].animation}");
+            anim.SetTrigger(attackType[AttackCounter].animation);
+            int damageType = attackType[AttackCounter].damage;
+            GameObject slashType = attackType[AttackCounter].effect;
+
+
+            if (yAxis == 0 || yAxis < 0 && Grounded())
             {
-                Hit(UpAttackTransform, UpAttackArea, ref pState.recoilingY, recoilYSpeed);
-                SlashEffectAtAngle(slashEffect, 80, UpAttackTransform);
+                Hit(damageType, SideAttackTransform, SideAttackArea, ref pState.recoilingX, recoilXSpeed);
+                Instantiate(slashType, SideAttackTransform);
+            }
+            else if (yAxis > 0)
+            {
+                Hit(damageType, UpAttackTransform, UpAttackArea, ref pState.recoilingY, recoilYSpeed);
+                SlashEffectAtAngle(slashType, 80, UpAttackTransform);
             }
             else if (yAxis < 0 && !Grounded())
             {
-                Hit(DownAttackTransform, DownAttackArea, ref pState.recoilingY, recoilYSpeed);
-                SlashEffectAtAngle(slashEffect, -90, DownAttackTransform);
+                Hit(damageType, DownAttackTransform, DownAttackArea, ref pState.recoilingY, recoilYSpeed);
+                SlashEffectAtAngle(slashEffect1, -90, DownAttackTransform);
             }
+
+            AttackCounter++;
         }
-       
+        if (AttackCounter >= MaxAttack) AttackCounter = 0;
+        //if (timeSinceAttck >= timeBetweenAttack) AttackCounter = 0;
 
     }
-    void Hit(Transform _attackTransform, Vector2 _attackArea, ref bool _recoilDir, float _recoilStrength)
+    void Hit(int damage, Transform _attackTransform, Vector2 _attackArea, ref bool _recoilDir, float _recoilStrength)
     {
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackableLayer);
 
@@ -280,7 +329,7 @@ public class PlayerController : MonoBehaviour
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, -recoilYSpeed);
             }
-            airJumpCounter = 0;
+            //airJumpCounter = 0;
         }
         else
         {
@@ -358,18 +407,27 @@ public class PlayerController : MonoBehaviour
         {
             if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
             {
+
+                //Terresquall method
                 rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce);
+
+
 
                 pState.jumping = true;
             }
-            else if(!Grounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump"))
-            {
-                pState.jumping = true;
+            //Disabled airjump
+            //else if(!Grounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump"))
+            //{
+            //    pState.jumping = true;
 
-                airJumpCounter++;
+            //    airJumpCounter++;
 
-                rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce);
-            }
+            //    //Tutorialvania method, doesn't work with max airJumps
+            //    //rb.AddForce(transform.up * jumpForce * 100);
+
+            //    //Terresquall method
+            //    rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce);
+            //}
         }
 
         if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0)
@@ -388,7 +446,7 @@ public class PlayerController : MonoBehaviour
         {
             pState.jumping = false;
             coyoteTimeCounter = coyoteTime;
-            airJumpCounter = 0;
+            //airJumpCounter = 0;
         }
         else
         {

@@ -6,6 +6,7 @@ public class PlayerStateList : MonoBehaviour
 {
     public bool jumping = false;
     public bool dashing = false;
+    public bool canAttack = true;
     public bool recoilingX, recoilingY;
     public bool lookingRight;
     public bool invincible;
