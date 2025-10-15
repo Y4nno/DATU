@@ -96,9 +96,12 @@ public class PlayerController : MonoBehaviour
     [Space(5)]
 
     [HideInInspector ] public PlayerStateList pState;
+    private Transform tf;
     private Animator anim;
     private Rigidbody2D rb;
     AttackData[] attackType;
+
+    private float scale;
 
     //Input Variables
     private float xAxis, yAxis;
@@ -128,9 +131,12 @@ public class PlayerController : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
 
+        tf = GetComponent<Transform>();
+
         anim = GetComponent<Animator>();
 
         gravity = rb.gravityScale;
+        scale = tf.transform.localScale.x;
 
         //Declaring a struct to cycle between different attack properties
         attackType = new AttackData[]
@@ -186,12 +192,12 @@ public class PlayerController : MonoBehaviour
     {
         if (xAxis < 0)
         {
-            transform.localScale = new Vector2(-1, transform.localScale.y);
+            transform.localScale = new Vector2(-scale, transform.localScale.y);
             pState.lookingRight = false;
         }
         else if (xAxis > 0)
         {
-            transform.localScale = new Vector2(1, transform.localScale.y);
+            transform.localScale = new Vector2(scale, transform.localScale.y);
             pState.lookingRight = true; 
         }
     }
