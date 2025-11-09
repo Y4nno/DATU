@@ -3,22 +3,18 @@ using UnityEngine;
 
 public class PlayerOneWayPlatform : MonoBehaviour
 {
-    private GameObject currentOneWayPlatform;
-
     [SerializeField] private BoxCollider2D playerCollider;
+    private GameObject currentOneWayPlatform;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && currentOneWayPlatform != null)
         {
-            if (currentOneWayPlatform != null)
-            {
-                StartCoroutine(DisableCollision());
-            }
+            StartCoroutine(DisableCollision());
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("OneWayPlatform"))
         {
@@ -35,11 +31,12 @@ public class PlayerOneWayPlatform : MonoBehaviour
     }
 
     private IEnumerator DisableCollision()
-    {
-        BoxCollider2D platformCollider = currentOneWayPlatform.GetComponent<BoxCollider2D>();
+{
+    BoxCollider2D platformCollider = currentOneWayPlatform.GetComponent<BoxCollider2D>();
+    Physics2D.IgnoreCollision(playerCollider, platformCollider);
+    transform.position += Vector3.down * 0.2f;
+    yield return new WaitForSeconds(0.25f);
+    Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
+}
 
-        Physics2D.IgnoreCollision(playerCollider, platformCollider);
-        yield return new WaitForSeconds(0.25f);
-        Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
-    }
 }
