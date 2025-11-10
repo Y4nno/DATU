@@ -9,24 +9,22 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float recoilFactor;
     [SerializeField] protected bool isRecoiling = false;
 
-    [SerializeField] protected PlayerController player;
+    [SerializeField] protected MessyController player;
     [SerializeField] protected float speed;
-
     [SerializeField] protected float damage;
 
     protected float recoilTimer;
     protected Rigidbody2D rb;
-    // Start is called before the first frame update
 
-    [Header("Health")]
-    [SerializeField][Range(0, 5)] float attack_range = 1;
-    [SerializeField][Range(0, 5)] float attack_delay = 1;
-    [SerializeField][Range(0, 10)] float attack_cooldown = 1;
-    float attack_duration;
-    float cooldown;
-    [SerializeField] GameObject Attackbox;
-    float player_distance;
-    [SerializeField] bool ready_to_attack;
+    //[Header("Health")]
+    //[SerializeField][Range(0, 5)] float attack_range = 1;
+    //[SerializeField][Range(0, 5)] float attack_delay = 1;
+    //[SerializeField][Range(0, 10)] float attack_cooldown = 1;
+    //float attack_duration;
+    //float cooldown;
+    //[SerializeField] GameObject Attackbox;
+    //float player_distance;
+    //[SerializeField] bool ready_to_attack;
 
     protected virtual void Start()
     {
@@ -35,7 +33,7 @@ public class Enemy : MonoBehaviour
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        player = PlayerController.Instance;
+        player = MessyController.Instance;
     }
     // Update is called once per frame
     protected virtual void Update()
@@ -68,14 +66,14 @@ public class Enemy : MonoBehaviour
     }
     protected void OnTriggerStay2D(Collider2D _other)
     {
-        if (_other.CompareTag("Player") && !PlayerController.Instance.pState.invincible)
+        if (_other.CompareTag("Player") && !MessyController.Instance.pState.invincible)
         {
             Attack();
         }
     }
     protected virtual void Attack()
     {
-        PlayerController.Instance.TakeDamage(damage);
+        MessyController.Instance.TakeDamage(damage);
     }
 
     

@@ -30,7 +30,7 @@ public class PassThrough : MonoBehaviour
 
     private void SetPlayerOnPlat(Collision2D other, bool value)
     {
-        var player = other.gameObject.GetComponent<PlayerController>();
+        var player = other.gameObject.GetComponent<MessyController>();
         if (player != null)
         {
             _playerOnPlat = value;

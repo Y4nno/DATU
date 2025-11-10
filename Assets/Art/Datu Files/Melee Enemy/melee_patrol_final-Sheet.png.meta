@@ -1,0 +1,457 @@
+fileFormatVersion: 2
+guid: b9c9bdb5c40d178418b89deb3e3f1bd4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -646883604320985031
+    second: melee_patrol_final-Sheet_0
+  - first:
+      213: -4062436448949280684
+    second: melee_patrol_final-Sheet_1
+  - first:
+      213: 7849665465241644961
+    second: melee_patrol_final-Sheet_2
+  - first:
+      213: -1080892048401717764
+    second: melee_patrol_final-Sheet_3
+  - first:
+      213: -4708878570873246632
+    second: melee_patrol_final-Sheet_4
+  - first:
+      213: -4365800054555023815
+    second: melee_patrol_final-Sheet_5
+  - first:
+      213: -6318076448234120879
+    second: melee_patrol_final-Sheet_6
+  - first:
+      213: -8959967437201972713
+    second: melee_patrol_final-Sheet_7
+  - first:
+      213: 1349033601115973052
+    second: melee_patrol_final-Sheet_8
+  - first:
+      213: -1359612834815584614
+    second: melee_patrol_final-Sheet_9
+  - first:
+      213: 1767600507573191636
+    second: melee_patrol_final-Sheet_10
+  - first:
+      213: -6524071305947742676
+    second: melee_patrol_final-Sheet_11
+  - first:
+      213: 8344664827030240113
+    second: melee_patrol_final-Sheet_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: melee_patrol_final-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 11
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9306c690acec507f0800000000000000
+      internalID: -646883604320985031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_patrol_final-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 11
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45067c9c2935f97c0800000000000000
+      internalID: -4062436448949280684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_patrol_final-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 11
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1af216db62d9fec60800000000000000
+      internalID: 7849665465241644961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_patrol_final-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 11
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf5a876a866eff0f0800000000000000
+      internalID: -1080892048401717764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_patrol_final-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 11
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85ca6a473e3b6aeb0800000000000000
+      internalID: -4708878570873246632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_patrol_final-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 11
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 936eddb3bff8963c0800000000000000
+      internalID: -4365800054555023815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_patrol_final-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 11
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1595e37e1fea158a0800000000000000
+      internalID: -6318076448234120879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_patrol_final-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 11
+        width: 46
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 712628a761dc7a380800000000000000
+      internalID: -8959967437201972713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_patrol_final-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 11
+        width: 46
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb56598a9eab8b210800000000000000
+      internalID: 1349033601115973052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_patrol_final-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 11
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9651cc845fa12de0800000000000000
+      internalID: -1359612834815584614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_patrol_final-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 11
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d343b6eb47c78810800000000000000
+      internalID: 1767600507573191636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_patrol_final-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 11
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2e7aa796b7d575a0800000000000000
+      internalID: -6524071305947742676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_patrol_final-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 11
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17b75d0c2743ec370800000000000000
+      internalID: 8344664827030240113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 258e6877a3089f445b30050db514fddd
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":40.0,"y":56.0},"gridSpriteOffset":{"x":16.0,"y":8.0},"gridSpritePadding":{"x":9.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":1,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      melee_patrol_final-Sheet_0: -646883604320985031
+      melee_patrol_final-Sheet_1: -4062436448949280684
+      melee_patrol_final-Sheet_10: 1767600507573191636
+      melee_patrol_final-Sheet_11: -6524071305947742676
+      melee_patrol_final-Sheet_12: 8344664827030240113
+      melee_patrol_final-Sheet_2: 7849665465241644961
+      melee_patrol_final-Sheet_3: -1080892048401717764
+      melee_patrol_final-Sheet_4: -4708878570873246632
+      melee_patrol_final-Sheet_5: -4365800054555023815
+      melee_patrol_final-Sheet_6: -6318076448234120879
+      melee_patrol_final-Sheet_7: -8959967437201972713
+      melee_patrol_final-Sheet_8: 1349033601115973052
+      melee_patrol_final-Sheet_9: -1359612834815584614
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

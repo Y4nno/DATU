@@ -21,7 +21,7 @@ public class Zombie : Enemy
         if(!isRecoiling)
         {
             transform.position = Vector2.MoveTowards
-                (transform.position, new Vector2(PlayerController.Instance.transform.position.x, transform.position.y),
+                (transform.position, new Vector2(MessyController.Instance.transform.position.x, transform.position.y),
                 speed * Time.deltaTime);
         }
     }
