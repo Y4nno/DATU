@@ -394,6 +394,10 @@ public class PlayerController : MonoBehaviour
     }
     public bool Grounded()
     {
+
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb.linearVelocity.y > 0) return false;
+        
         if (Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckY, whatIsGround) 
             || Physics2D.Raycast(groundCheckPoint.position + new Vector3(groundCheckX, 0, 0), Vector2.down, groundCheckY, whatIsGround) 
             || Physics2D.Raycast(groundCheckPoint.position + new Vector3(-groundCheckX, 0, 0), Vector2.down, groundCheckY, whatIsGround))
