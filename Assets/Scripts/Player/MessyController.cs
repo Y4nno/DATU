@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 public class MessyController : MonoBehaviour
@@ -104,10 +106,23 @@ public class MessyController : MonoBehaviour
     public int maxHealth;
     [Space(5)]
 
+    [Header("Spirits")]
+    [SerializeField] GameObject ProjectileGod;
+    [SerializeField] GameObject DashGod;
+    [SerializeField] GameObject HealingGod;
+
+
+    [Header("Debug Settings")]
+    [SerializeField] TextMeshProUGUI debugText;
+    [Space(5)]
+
+
+
     [HideInInspector] public PlayerStateList pState;
     private Transform tf;
     private Animator anim;
     private Rigidbody2D rb;
+    private Camera mainCam;
     AttackData[] attackType;
 
     private float scale;
@@ -144,6 +159,8 @@ public class MessyController : MonoBehaviour
 
         anim = GetComponent<Animator>();
 
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+
         gravity = rb.gravityScale;
         scale = tf.transform.localScale.x;
 
@@ -173,9 +190,10 @@ public class MessyController : MonoBehaviour
         if (pState.dashing) return;
         Flip();
         if(pState.canMove) Move();
-        Jump();
+        if(pState.canJump) Jump();
         StartDash();
         Attack();
+        JumpAttack();
 
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -184,6 +202,8 @@ public class MessyController : MonoBehaviour
 
 
         HandleProjectileMode();
+
+        debugText.text = $"Health: {health}\n Can Dash: {canDash} \nCan Throw: {canUseProjectile} \nCan Move: {pState.canMove}\n";
 
     }
 
@@ -201,6 +221,19 @@ public class MessyController : MonoBehaviour
             anim.SetBool("Attack1", false);
             anim.SetBool("Attack2", false);
             anim.SetBool("Attack3", false);
+            
+            pState.canMove = true;
+            pState.canJump = true;
+        } else
+        {
+            if(Grounded())
+            {
+                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+                pState.canMove = false;
+                pState.canJump = false;
+                anim.SetBool("Walking", false);
+            }
+            
         }
 
         //if dashing, ignore other methods
@@ -210,7 +243,9 @@ public class MessyController : MonoBehaviour
 
     void GetInputs()
     {
-        xAxis = Input.GetAxisRaw("Horizontal");
+        if (pState.canMove)
+            xAxis = Input.GetAxisRaw("Horizontal");
+
         yAxis = Input.GetAxisRaw("Vertical");
         attack = Input.GetMouseButtonDown(0);
     }
@@ -231,6 +266,7 @@ public class MessyController : MonoBehaviour
 
     private void Move()
     {
+
         rb.linearVelocity = new Vector2(walkSpeed * xAxis, rb.linearVelocity.y);
         anim.SetBool("Walking", rb.linearVelocity.x != 0 && Grounded());
     }
@@ -257,13 +293,17 @@ public class MessyController : MonoBehaviour
         anim.SetTrigger("Dashing");
         rb.gravityScale = 0;
         rb.linearVelocity = new Vector2(transform.localScale.x * dashSpeed, 0);
-        if (Grounded()) Instantiate(dashEffect, transform);
+
+        Vector3 shoulderOffset = new Vector3(-0.5f * (pState.lookingRight ? 1 : -1), 1f, 0);
+                spiritObj = SummonSpirit(DashGod, shoulderOffset);
 
         yield return new WaitForSeconds(dashTime);
 
         rb.gravityScale = gravity;
         pState.dashing = false;
         pState.invincible = false;
+        Destroy(spiritObj, 0.5f);
+
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
@@ -272,19 +312,13 @@ public class MessyController : MonoBehaviour
     IEnumerator AttackCooldown()
     {
         pState.canAttack = false;
-        pState.canMove = false;
         yield return new WaitForSeconds(attackCooldown);
         pState.canAttack = true;
-        pState.canMove = true;
     }
     void Attack()
     {
-        if (attack && pState.canAttack)
+        if (attack && pState.canAttack && !pState.jumping)
         {
-            if (Grounded())
-            {
-                pState.canMove = false;
-            }
 
             StartCoroutine(AttackCooldown());
 
@@ -303,7 +337,29 @@ public class MessyController : MonoBehaviour
             int damageType = attackType[AttackCounter].damage;
             GameObject slashType = attackType[AttackCounter].effect;
 
-            if (yAxis == 0 || yAxis < 0 && Grounded())
+                Hit(damageType, SideAttackTransform, SideAttackArea, ref pState.recoilingX, recoilXSpeed);
+                Instantiate(slashType, SideAttackTransform);
+
+            AttackCounter++;
+        }
+        if (AttackCounter >= MaxAttack) AttackCounter = 0;
+        //if (timeSinceAttck >= timeBetweenAttack) AttackCounter = 0;
+
+    }
+
+    void JumpAttack()
+    {
+        if (attack && pState.canAttack && pState.jumping)
+        {
+
+            StartCoroutine(AttackCooldown());
+
+            anim.SetTrigger("JumpAttack");
+
+            int damageType = 1;
+            GameObject slashType = slashEffect1;
+
+            if (yAxis == 0 || yAxis < 0)
             {
                 Hit(damageType, SideAttackTransform, SideAttackArea, ref pState.recoilingX, recoilXSpeed);
                 Instantiate(slashType, SideAttackTransform);
@@ -325,6 +381,7 @@ public class MessyController : MonoBehaviour
         //if (timeSinceAttck >= timeBetweenAttack) AttackCounter = 0;
 
     }
+
     void Hit(int damage, Transform _attackTransform, Vector2 _attackArea, ref bool _recoilDir, float _recoilStrength)
     {
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackableLayer);
@@ -494,7 +551,6 @@ public class MessyController : MonoBehaviour
         {
             pState.jumping = false;
             coyoteTimeCounter = coyoteTime;
-            //airJumpCounter = 0;
         }
         else
         {
@@ -511,6 +567,7 @@ public class MessyController : MonoBehaviour
         }
     }
 
+
     void HandleProjectileMode()
     {
         if (Input.GetKey(KeyCode.E) && canUseProjectile)
@@ -518,13 +575,22 @@ public class MessyController : MonoBehaviour
             if (!aiming)
             {
                 aiming = true;
-                spiritObj = SummonSpirit();
+                Vector3 shoulderOffset = new Vector3(-0.5f * (pState.lookingRight ? 1 : -1), 1f, 0);
+                spiritObj = SummonSpirit(ProjectileGod, shoulderOffset);
             }
 
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 aimDir = (mousePos - transform.position).normalized;
+            Vector3 mousePos = mainCam.ScreenToWorldPoint(new Vector3(
+                Input.mousePosition.x,
+                Input.mousePosition.y,
+                Mathf.Abs(mainCam.transform.position.z)
+            ));
+            mousePos.z = 0f;
+            Vector2 aimDir = (mousePos - spiritObj.transform.position).normalized;
 
-            spiritObj.transform.right = aimDir;
+            float rotZ = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg;
+
+            spiritObj.transform.rotation = Quaternion.Euler(0, 0, rotZ);
+
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -544,7 +610,8 @@ public class MessyController : MonoBehaviour
         Rigidbody2D prb = projectile.GetComponent<Rigidbody2D>();
         prb.linearVelocity = direction * projectileSpeed;
 
-        Destroy(projectile, 2f);
+
+        Destroy(projectile, 3f);
 
         StartCoroutine(ProjectileCooldown());
     }
@@ -559,19 +626,30 @@ public class MessyController : MonoBehaviour
     void Heal(int amount)
     {
         health = Mathf.Clamp(health + amount, 0, maxHealth);
-        // Optional: healing animation or effect
+
         Debug.Log($"Healed {amount}, current HP: {health}");
-    }
-    public GameObject SummonSpirit()
+
+        Vector3 healOffset = new Vector3(-0.3f, 0, 0);
+        GameObject healSpirit = SummonSpirit(HealingGod, healOffset);
+
+        Animator healAnim = healSpirit.GetComponent<Animator>();
+    if (healAnim != null)
     {
-        Vector3 shoulderOffset = new Vector3(0.5f * (pState.lookingRight ? 1 : -1), 1f, 0);
-        GameObject spirit = new GameObject("Spirit");
-        SpriteRenderer sr = spirit.AddComponent<SpriteRenderer>();
-        sr.sprite = Resources.Load<Sprite>("SpiritSprite"); // You can set this to any sprite in Resources
-        spirit.transform.position = transform.position + shoulderOffset;
-        spirit.transform.localScale = Vector3.one * 0.75f;
-        spirit.transform.SetParent(transform);
-        return spirit;
+        healAnim.SetTrigger("Heal");
+        float animLength = healAnim.GetCurrentAnimatorStateInfo(0).length;
+        Destroy(healSpirit, animLength);
+    }
+    else
+    {
+        Destroy(healSpirit, 2f);
+    }
+    }
+
+    public GameObject SummonSpirit(GameObject spirit, Vector3 offset)
+    {
+        GameObject summoned = Instantiate(spirit, transform.position + offset, Quaternion.identity);
+        summoned.transform.SetParent(transform);
+        return summoned;
     }
 
 }

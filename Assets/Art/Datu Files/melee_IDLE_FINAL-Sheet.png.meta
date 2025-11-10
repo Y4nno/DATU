@@ -1,34 +1,28 @@
 fileFormatVersion: 2
-guid: 54fc257928ea60f4791df573c9f5ee15
+guid: 43f9086fc859d524f88544d0622a4866
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8301369685642220154
-    second: projectile-Sheet_0
+      213: -4021766269207156774
+    second: melee_IDLE_FINAL-Sheet_0
   - first:
-      213: -3292707894431236502
-    second: projectile-Sheet_1
+      213: 8684862343187191880
+    second: melee_IDLE_FINAL-Sheet_1
   - first:
-      213: 8906550954718087112
-    second: projectile-Sheet_2
+      213: -1670600094683544344
+    second: melee_IDLE_FINAL-Sheet_2
   - first:
-      213: 2599129334238767129
-    second: projectile-Sheet_3
+      213: -486621615452159724
+    second: melee_IDLE_FINAL-Sheet_3
   - first:
-      213: 7561669215430701924
-    second: projectile-Sheet_4
+      213: 3475148956962324015
+    second: melee_IDLE_FINAL-Sheet_4
   - first:
-      213: -1350720394681194674
-    second: projectile-Sheet_5
+      213: -5582965110181981153
+    second: melee_IDLE_FINAL-Sheet_5
   - first:
-      213: -377257537294512018
-    second: projectile-Sheet_6
-  - first:
-      213: 7333457340682020961
-    second: projectile-Sheet_7
-  - first:
-      213: 4074081073644055173
-    second: projectile-Sheet_8
+      213: -1593661560489634653
+    second: melee_IDLE_FINAL-Sheet_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -124,123 +118,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: projectile-Sheet_0
+      name: melee_IDLE_FINAL-Sheet_0
       rect:
         serializedVersion: 2
         x: 15
-        y: 11
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 68d6912e04c9bcc80800000000000000
-      internalID: -8301369685642220154
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: projectile-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 11
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a6e3d439d93fd42d0800000000000000
-      internalID: -3292707894431236502
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: projectile-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 13
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8c743e587ec6a9b70800000000000000
-      internalID: 8906550954718087112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: projectile-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 111
-        y: 11
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9186994db56f11420800000000000000
-      internalID: 2599129334238767129
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: projectile-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 143
-        y: 8
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 463f0c6861270f860800000000000000
-      internalID: 7561669215430701924
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: projectile-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 175
         y: 10
-        width: 22
-        height: 25
+        width: 41
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,64 +133,86 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e47e62c15f6414de0800000000000000
-      internalID: -1350720394681194674
+      spriteID: ad7624ae2e0df28c0800000000000000
+      internalID: -4021766269207156774
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: projectile-Sheet_6
+      name: melee_IDLE_FINAL-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 10
+        width: 41
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 848d6d86944d68870800000000000000
+      internalID: 8684862343187191880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_IDLE_FINAL-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 10
+        width: 41
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e447aaa016d0d8e0800000000000000
+      internalID: -1670600094683544344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_IDLE_FINAL-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 10
+        width: 41
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41182fe083c2f39f0800000000000000
+      internalID: -486621615452159724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_IDLE_FINAL-Sheet_4
       rect:
         serializedVersion: 2
         x: 207
-        y: 11
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e60d8b4c446b3caf0800000000000000
-      internalID: -377257537294512018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: projectile-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 239
-        y: 8
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 16825d6d89ca5c560800000000000000
-      internalID: 7333457340682020961
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: projectile-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 271
         y: 10
-        width: 22
-        height: 25
+        width: 41
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,8 +221,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58a22bca62b0a8830800000000000000
-      internalID: 4074081073644055173
+      spriteID: f2efe4170953a3030800000000000000
+      internalID: 3475148956962324015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_IDLE_FINAL-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 10
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f141436efc25582b0800000000000000
+      internalID: -5582965110181981153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_IDLE_FINAL-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 10
+        width: 41
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a412da114d22e9e0800000000000000
+      internalID: -1593661560489634653
       vertices: []
       indices: 
       edges: []
@@ -335,15 +285,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      projectile-Sheet_0: -8301369685642220154
-      projectile-Sheet_1: -3292707894431236502
-      projectile-Sheet_2: 8906550954718087112
-      projectile-Sheet_3: 2599129334238767129
-      projectile-Sheet_4: 7561669215430701924
-      projectile-Sheet_5: -1350720394681194674
-      projectile-Sheet_6: -377257537294512018
-      projectile-Sheet_7: 7333457340682020961
-      projectile-Sheet_8: 4074081073644055173
+      melee_IDLE_FINAL-Sheet_0: -4021766269207156774
+      melee_IDLE_FINAL-Sheet_1: 8684862343187191880
+      melee_IDLE_FINAL-Sheet_2: -1670600094683544344
+      melee_IDLE_FINAL-Sheet_3: -486621615452159724
+      melee_IDLE_FINAL-Sheet_4: 3475148956962324015
+      melee_IDLE_FINAL-Sheet_5: -5582965110181981153
+      melee_IDLE_FINAL-Sheet_6: -1593661560489634653
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

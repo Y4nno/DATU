@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float damage = 2f;
+    [SerializeField] private float damage = 5f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -1,61 +1,46 @@
 fileFormatVersion: 2
-guid: 2e0299fa787df274d9a124f988eafd9c
+guid: 3e3ef4829d883b1428d3d881f7a79f30
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -806958690467812972
-    second: Heal-Sheet_0
+      213: -646883604320985031
+    second: melee_patrol_final-Sheet_0
   - first:
-      213: -515023698250744803
-    second: Heal-Sheet_1
+      213: -4062436448949280684
+    second: melee_patrol_final-Sheet_1
   - first:
-      213: 6791320389997409312
-    second: Heal-Sheet_2
+      213: 7849665465241644961
+    second: melee_patrol_final-Sheet_2
   - first:
-      213: 5657897520169920301
-    second: Heal-Sheet_3
+      213: -1080892048401717764
+    second: melee_patrol_final-Sheet_3
   - first:
-      213: 4317999298093431353
-    second: Heal-Sheet_4
+      213: -4708878570873246632
+    second: melee_patrol_final-Sheet_4
   - first:
-      213: -8249739807386521687
-    second: Heal-Sheet_5
+      213: -4365800054555023815
+    second: melee_patrol_final-Sheet_5
   - first:
-      213: 9122483374984134868
-    second: Heal-Sheet_6
+      213: -6318076448234120879
+    second: melee_patrol_final-Sheet_6
   - first:
-      213: 8511902109148706291
-    second: Heal-Sheet_7
+      213: -8959967437201972713
+    second: melee_patrol_final-Sheet_7
   - first:
-      213: -4628434887676251229
-    second: Heal-Sheet_8
+      213: 1349033601115973052
+    second: melee_patrol_final-Sheet_8
   - first:
-      213: -2701212672561708478
-    second: Heal-Sheet_9
+      213: -1359612834815584614
+    second: melee_patrol_final-Sheet_9
   - first:
-      213: 301832715197465149
-    second: Heal-Sheet_10
+      213: 1767600507573191636
+    second: melee_patrol_final-Sheet_10
   - first:
-      213: 691807471419004559
-    second: Heal-Sheet_11
+      213: -6524071305947742676
+    second: melee_patrol_final-Sheet_11
   - first:
-      213: 4953956115635901747
-    second: Heal-Sheet_12
-  - first:
-      213: 2680457549063934736
-    second: Heal-Sheet_13
-  - first:
-      213: 2002948859926371999
-    second: Heal-Sheet_14
-  - first:
-      213: 7882516178936939380
-    second: Heal-Sheet_15
-  - first:
-      213: 2925787312087755045
-    second: Heal-Sheet_16
-  - first:
-      213: 4245248952687791811
-    second: Heal-Sheet_17
+      213: 8344664827030240113
+    second: melee_patrol_final-Sheet_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -151,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Heal-Sheet_0
+      name: melee_patrol_final-Sheet_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 51
-        width: 15
-        height: 19
+        x: 15
+        y: 10
+        width: 42
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4996042b85b1dc4f0800000000000000
-      internalID: -806958690467812972
+      spriteID: 9306c690acec507f0800000000000000
+      internalID: -646883604320985031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Heal-Sheet_1
+      name: melee_patrol_final-Sheet_1
       rect:
         serializedVersion: 2
-        x: 23
-        y: 56
-        width: 7
-        height: 7
+        x: 64
+        y: 10
+        width: 42
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1c3bd6dca44ad8f0800000000000000
-      internalID: -515023698250744803
+      spriteID: 45067c9c2935f97c0800000000000000
+      internalID: -4062436448949280684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Heal-Sheet_2
+      name: melee_patrol_final-Sheet_2
       rect:
         serializedVersion: 2
-        x: 41
-        y: 51
-        width: 15
-        height: 19
+        x: 111
+        y: 10
+        width: 40
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 024b9a9a9ed9f3e50800000000000000
-      internalID: 6791320389997409312
+      spriteID: 1af216db62d9fec60800000000000000
+      internalID: 7849665465241644961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Heal-Sheet_3
+      name: melee_patrol_final-Sheet_3
       rect:
         serializedVersion: 2
-        x: 55
-        y: 56
-        width: 7
-        height: 7
+        x: 159
+        y: 10
+        width: 40
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,20 +217,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d27aa4951d3e48e40800000000000000
-      internalID: 5657897520169920301
+      spriteID: cf5a876a866eff0f0800000000000000
+      internalID: -1080892048401717764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Heal-Sheet_4
+      name: melee_patrol_final-Sheet_4
       rect:
         serializedVersion: 2
-        x: 73
-        y: 51
-        width: 15
-        height: 19
+        x: 207
+        y: 10
+        width: 46
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93abe3fdb7d9ceb30800000000000000
-      internalID: 4317999298093431353
+      spriteID: 85ca6a473e3b6aeb0800000000000000
+      internalID: -4708878570873246632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Heal-Sheet_5
+      name: melee_patrol_final-Sheet_5
       rect:
         serializedVersion: 2
-        x: 87
-        y: 56
-        width: 7
-        height: 10
+        x: 255
+        y: 10
+        width: 46
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,20 +261,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9afa35baa59038d80800000000000000
-      internalID: -8249739807386521687
+      spriteID: 936eddb3bff8963c0800000000000000
+      internalID: -4365800054555023815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Heal-Sheet_6
+      name: melee_patrol_final-Sheet_6
       rect:
         serializedVersion: 2
-        x: 105
-        y: 50
-        width: 15
-        height: 19
+        x: 303
+        y: 10
+        width: 46
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,20 +283,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4d0065beb42999e70800000000000000
-      internalID: 9122483374984134868
+      spriteID: 1595e37e1fea158a0800000000000000
+      internalID: -6318076448234120879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Heal-Sheet_7
+      name: melee_patrol_final-Sheet_7
       rect:
         serializedVersion: 2
-        x: 119
-        y: 55
-        width: 10
-        height: 13
+        x: 351
+        y: 10
+        width: 48
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f5f4baced9502670800000000000000
-      internalID: 8511902109148706291
+      spriteID: 712628a761dc7a380800000000000000
+      internalID: -8959967437201972713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Heal-Sheet_8
+      name: melee_patrol_final-Sheet_8
       rect:
         serializedVersion: 2
-        x: 137
-        y: 49
-        width: 15
-        height: 19
+        x: 399
+        y: 10
+        width: 48
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,20 +327,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a3380efdfe74cfb0800000000000000
-      internalID: -4628434887676251229
+      spriteID: cb56598a9eab8b210800000000000000
+      internalID: 1349033601115973052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Heal-Sheet_9
+      name: melee_patrol_final-Sheet_9
       rect:
         serializedVersion: 2
-        x: 151
-        y: 53
-        width: 17
-        height: 15
+        x: 447
+        y: 10
+        width: 46
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,20 +349,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2420d2dc26d538ad0800000000000000
-      internalID: -2701212672561708478
+      spriteID: a9651cc845fa12de0800000000000000
+      internalID: -1359612834815584614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Heal-Sheet_10
+      name: melee_patrol_final-Sheet_10
       rect:
         serializedVersion: 2
-        x: 169
-        y: 49
-        width: 15
-        height: 19
+        x: 495
+        y: 10
+        width: 46
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,20 +371,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d32cfea5143503400800000000000000
-      internalID: 301832715197465149
+      spriteID: 4d343b6eb47c78810800000000000000
+      internalID: 1767600507573191636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Heal-Sheet_11
+      name: melee_patrol_final-Sheet_11
       rect:
         serializedVersion: 2
-        x: 183
-        y: 32
-        width: 27
-        height: 36
+        x: 543
+        y: 10
+        width: 46
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -408,20 +393,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f8614eada3bc99900800000000000000
-      internalID: 691807471419004559
+      spriteID: c2e7aa796b7d575a0800000000000000
+      internalID: -6524071305947742676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Heal-Sheet_12
+      name: melee_patrol_final-Sheet_12
       rect:
         serializedVersion: 2
-        x: 216
-        y: 50
-        width: 15
-        height: 19
+        x: 591
+        y: 10
+        width: 46
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -430,118 +415,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3351a5907dcffb440800000000000000
-      internalID: 4953956115635901747
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Heal-Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 229
-        y: 18
-        width: 28
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 013587f60f5e23520800000000000000
-      internalID: 2680457549063934736
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Heal-Sheet_14
-      rect:
-        serializedVersion: 2
-        x: 230
-        y: 55
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f9e5f234067ebcb10800000000000000
-      internalID: 2002948859926371999
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Heal-Sheet_15
-      rect:
-        serializedVersion: 2
-        x: 264
-        y: 50
-        width: 15
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4734ecd83b2546d60800000000000000
-      internalID: 7882516178936939380
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Heal-Sheet_16
-      rect:
-        serializedVersion: 2
-        x: 277
-        y: 9
-        width: 28
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 529e5511f0c7a9820800000000000000
-      internalID: 2925787312087755045
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Heal-Sheet_17
-      rect:
-        serializedVersion: 2
-        x: 278
-        y: 55
-        width: 14
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3ce0e002e672aea30800000000000000
-      internalID: 4245248952687791811
+      spriteID: 17b75d0c2743ec370800000000000000
+      internalID: 8344664827030240113
       vertices: []
       indices: 
       edges: []
@@ -560,24 +435,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Heal-Sheet_0: -806958690467812972
-      Heal-Sheet_1: -515023698250744803
-      Heal-Sheet_10: 301832715197465149
-      Heal-Sheet_11: 691807471419004559
-      Heal-Sheet_12: 4953956115635901747
-      Heal-Sheet_13: 2680457549063934736
-      Heal-Sheet_14: 2002948859926371999
-      Heal-Sheet_15: 7882516178936939380
-      Heal-Sheet_16: 2925787312087755045
-      Heal-Sheet_17: 4245248952687791811
-      Heal-Sheet_2: 6791320389997409312
-      Heal-Sheet_3: 5657897520169920301
-      Heal-Sheet_4: 4317999298093431353
-      Heal-Sheet_5: -8249739807386521687
-      Heal-Sheet_6: 9122483374984134868
-      Heal-Sheet_7: 8511902109148706291
-      Heal-Sheet_8: -4628434887676251229
-      Heal-Sheet_9: -2701212672561708478
+      melee_patrol_final-Sheet_0: -646883604320985031
+      melee_patrol_final-Sheet_1: -4062436448949280684
+      melee_patrol_final-Sheet_10: 1767600507573191636
+      melee_patrol_final-Sheet_11: -6524071305947742676
+      melee_patrol_final-Sheet_12: 8344664827030240113
+      melee_patrol_final-Sheet_2: 7849665465241644961
+      melee_patrol_final-Sheet_3: -1080892048401717764
+      melee_patrol_final-Sheet_4: -4708878570873246632
+      melee_patrol_final-Sheet_5: -4365800054555023815
+      melee_patrol_final-Sheet_6: -6318076448234120879
+      melee_patrol_final-Sheet_7: -8959967437201972713
+      melee_patrol_final-Sheet_8: 1349033601115973052
+      melee_patrol_final-Sheet_9: -1359612834815584614
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 215d4be736fd39e438082967c038b2d4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5340310614715245228
+    second: lapu2x_ATTACKREAL_FINAL-Sheet_0
+  - first:
+      213: -6667756370429971561
+    second: lapu2x_ATTACKREAL_FINAL-Sheet_1
+  - first:
+      213: -1806901084572623247
+    second: lapu2x_ATTACKREAL_FINAL-Sheet_2
+  - first:
+      213: -8175637336139135715
+    second: lapu2x_ATTACKREAL_FINAL-Sheet_3
+  - first:
+      213: 90533232181680103
+    second: lapu2x_ATTACKREAL_FINAL-Sheet_4
+  - first:
+      213: 6390020285651396176
+    second: lapu2x_ATTACKREAL_FINAL-Sheet_5
+  - first:
+      213: -5730397762013581924
+    second: lapu2x_ATTACKREAL_FINAL-Sheet_6
+  - first:
+      213: -4677513067162676147
+    second: lapu2x_ATTACKREAL_FINAL-Sheet_7
+  - first:
+      213: -2545610161572005159
+    second: lapu2x_ATTACKREAL_FINAL-Sheet_8
+  - first:
+      213: 8287589773202692011
+    second: lapu2x_ATTACKREAL_FINAL-Sheet_9
+  - first:
+      213: -7403229391435238103
+    second: lapu2x_ATTACKREAL_FINAL-Sheet_10
+  - first:
+      213: 519819500070078816
+    second: lapu2x_ATTACKREAL_FINAL-Sheet_11
+  - first:
+      213: -4214486693935365748
+    second: lapu2x_ATTACKREAL_FINAL-Sheet_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lapu2x_ATTACKREAL_FINAL-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 9
+        width: 46
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca2a95cb5389c1a40800000000000000
+      internalID: 5340310614715245228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapu2x_ATTACKREAL_FINAL-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 9
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7937cab88ee5773a0800000000000000
+      internalID: -6667756370429971561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapu2x_ATTACKREAL_FINAL-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 9
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17ed7c579099ce6e0800000000000000
+      internalID: -1806901084572623247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapu2x_ATTACKREAL_FINAL-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 9
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d15810fb82d4a8e80800000000000000
+      internalID: -8175637336139135715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapu2x_ATTACKREAL_FINAL-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 9
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e79e88be73a14100800000000000000
+      internalID: 90533232181680103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapu2x_ATTACKREAL_FINAL-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 9
+        width: 34
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 056aac11899eda850800000000000000
+      internalID: 6390020285651396176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapu2x_ATTACKREAL_FINAL-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 9
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9dac7da8998970b0800000000000000
+      internalID: -5730397762013581924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapu2x_ATTACKREAL_FINAL-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 9
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d44558fd5a2261fb0800000000000000
+      internalID: -4677513067162676147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapu2x_ATTACKREAL_FINAL-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 9
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9da30e69b0d2cacd0800000000000000
+      internalID: -2545610161572005159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapu2x_ATTACKREAL_FINAL-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 9
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba718eb3dfe630370800000000000000
+      internalID: 8287589773202692011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapu2x_ATTACKREAL_FINAL-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 9
+        width: 56
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92575cca712724990800000000000000
+      internalID: -7403229391435238103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapu2x_ATTACKREAL_FINAL-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 9
+        width: 56
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0698ff8c415c63700800000000000000
+      internalID: 519819500070078816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lapu2x_ATTACKREAL_FINAL-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 9
+        width: 56
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c814f516ea22385c0800000000000000
+      internalID: -4214486693935365748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      lapu2x_ATTACKREAL_FINAL-Sheet_0: 5340310614715245228
+      lapu2x_ATTACKREAL_FINAL-Sheet_1: -6667756370429971561
+      lapu2x_ATTACKREAL_FINAL-Sheet_10: -7403229391435238103
+      lapu2x_ATTACKREAL_FINAL-Sheet_11: 519819500070078816
+      lapu2x_ATTACKREAL_FINAL-Sheet_12: -4214486693935365748
+      lapu2x_ATTACKREAL_FINAL-Sheet_2: -1806901084572623247
+      lapu2x_ATTACKREAL_FINAL-Sheet_3: -8175637336139135715
+      lapu2x_ATTACKREAL_FINAL-Sheet_4: 90533232181680103
+      lapu2x_ATTACKREAL_FINAL-Sheet_5: 6390020285651396176
+      lapu2x_ATTACKREAL_FINAL-Sheet_6: -5730397762013581924
+      lapu2x_ATTACKREAL_FINAL-Sheet_7: -4677513067162676147
+      lapu2x_ATTACKREAL_FINAL-Sheet_8: -2545610161572005159
+      lapu2x_ATTACKREAL_FINAL-Sheet_9: 8287589773202692011
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

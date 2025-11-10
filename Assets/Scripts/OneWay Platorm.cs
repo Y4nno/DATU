@@ -16,7 +16,7 @@ public class OneWayPlatform : MonoBehaviour
     void Update()
     {
         // Press S to fall through the platform
-        if (Input.GetKeyDown(KeyCode.S) && player.GetComponent<PlayerController>().Grounded())
+        if (Input.GetKeyDown(KeyCode.S) && player.GetComponent<MessyController>().Grounded())
         {
             StartCoroutine(FallThrough());
         }

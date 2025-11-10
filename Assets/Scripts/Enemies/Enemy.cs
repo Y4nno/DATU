@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         if (isRecoiling)
         {
