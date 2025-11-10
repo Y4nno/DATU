@@ -6399,6 +6399,7 @@ MonoBehaviour:
   jumping: 0
   dashing: 0
   canMove: 1
+  canJump: 1
   canAttack: 1
   recoilingX: 0
   recoilingY: 0
@@ -6434,7 +6435,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978340226}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfffb2574324e4c48a6c3e170d36d4ea, type: 3}
   m_Name: 
@@ -6479,6 +6480,10 @@ MonoBehaviour:
   projectileCooldown: 3
   health: 3
   maxHealth: 10
+  ProjectileGod: {fileID: 0}
+  DashGod: {fileID: 0}
+  HealingGod: {fileID: 0}
+  debugText: {fileID: 0}
   pState: {fileID: 0}
 --- !u!50 &978340230
 Rigidbody2D:
