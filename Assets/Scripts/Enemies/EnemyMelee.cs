@@ -19,6 +19,10 @@ public class EnemyMelee : Enemy
     [SerializeField] private Vector2 AggroBoxArea; //how large the area of side attack is
     //[SerializeField] private float jumpForce = 20f;
     //[SerializeField] private float heightDifferenceThreshold = 2f;
+    [SerializeField] private float AggroTimer = 5f;
+
+    [Header("Chase Settings")]
+    [SerializeField] private float ChaseSpeed;
 
     [Header("Attack Settings")]
     [SerializeField] private float attackDelay = 0.5f;
@@ -37,6 +41,7 @@ public class EnemyMelee : Enemy
         patrolStartPos = transform.position;
         health = 5f; // default health
         attackRange = AttackBoxArea.x;
+        rb.freezeRotation = true;
     }
     private void OnDrawGizmos()
     {
@@ -45,13 +50,25 @@ public class EnemyMelee : Enemy
         Gizmos.DrawWireCube(AggroBoxTransform.position, AggroBoxArea);
     }
 
+    IEnumerator AggroCooldown()
+    {
+        yield return new WaitForSeconds(AggroTimer);
+        isAggroed = false;
+    }
+
     protected override void Update()
     {
+        anim.SetBool("Aggro", isAggroed);
+
         base.Update();
         if (isDead || isRecoiling) return;
 
         Collider2D[] aggroHits = Physics2D.OverlapBoxAll(AggroBoxTransform.position, AggroBoxArea, 0f, LayerMask.GetMask("Player"));
-        if (aggroHits.Length > 0) isAggroed = true;
+        if (aggroHits.Length > 0)
+        {
+            isAggroed = true;
+            StartCoroutine(AggroCooldown());
+        }
 
         float distance = Vector2.Distance(transform.position, player.transform.position);
 
@@ -67,7 +84,6 @@ public class EnemyMelee : Enemy
             Patrol();
         }
 
-        Debug.Log($"distance = {distance}, attackRange = {attackRange}");
     }
 
     private void Patrol()
@@ -75,14 +91,15 @@ public class EnemyMelee : Enemy
         if (isIdle) return;
 
         float targetX = movingRight ? patrolStartPos.x + patrolRange : patrolStartPos.x - patrolRange;
-        transform.position = Vector2.MoveTowards(transform.position,
-            new Vector2(targetX, transform.position.y), speed * Time.deltaTime);
+        float direction = Mathf.Sign(targetX - transform.position.x);
 
+        rb.linearVelocity = new Vector2(direction * speed, rb.linearVelocity.y);
         anim.SetBool("Walking", true);
 
         if (Mathf.Abs(transform.position.x - targetX) < 0.1f)
             StartCoroutine(SwitchPatrolDirection());
     }
+
 
     private IEnumerator SwitchPatrolDirection()
     {
@@ -99,7 +116,7 @@ public class EnemyMelee : Enemy
         Vector2 playerPos = player.transform.position;
         float direction = Mathf.Sign(playerPos.x - transform.position.x);
 
-        rb.linearVelocity = new Vector2(direction * speed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(direction * ChaseSpeed, rb.linearVelocity.y);
         anim.SetBool("Walking", true);
         FlipSprite(direction > 0);
 
@@ -164,8 +181,30 @@ public class EnemyMelee : Enemy
         isDead = true;
         anim.SetTrigger("Die");
         rb.linearVelocity = Vector2.zero;
-        Destroy(gameObject, 1f);
+        // Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
+        StartCoroutine(DeathSequence());
     }
+
+    private IEnumerator DeathSequence()
+{
+    // Wait until the death animation finishes
+    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length * 0.95f);
+
+    // Create corpse sprite object before destroying
+    GameObject corpse = new GameObject("EnemyCorpse");
+    SpriteRenderer sr = corpse.AddComponent<SpriteRenderer>();
+    sr.sprite = GetComponent<SpriteRenderer>().sprite; // current frame of the dead enemy
+    sr.sortingLayerID = GetComponent<SpriteRenderer>().sortingLayerID;
+    sr.sortingOrder = GetComponent<SpriteRenderer>().sortingOrder;
+    sr.flipX = GetComponent<SpriteRenderer>().flipX;
+    corpse.transform.position = transform.position;
+    corpse.transform.localScale = transform.localScale;
+
+    // Optional: give corpse its own layer or fade effect later
+    // corpse.layer = LayerMask.NameToLayer("Decor");
+
+    Destroy(gameObject); // remove the enemy logic and collider
+}
 
     private void FlipSprite(bool faceRight)
     {
@@ -173,6 +212,7 @@ public class EnemyMelee : Enemy
         scale.x = faceRight ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
         transform.localScale = scale;
     }
+    
 
     //private bool Grounded()
     //{
