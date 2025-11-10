@@ -111,6 +111,12 @@ public class MessyController : MonoBehaviour
     [SerializeField] GameObject DashGod;
     [SerializeField] GameObject HealingGod;
 
+    [Header("Respawn Settings")]
+    [SerializeField] private Transform respawnPoint; // assign the start of the stage
+    [SerializeField] private float fallThresholdY = -10f; // y position considered "fall off map"
+    private bool isDead = false;
+
+
 
     [Header("Debug Settings")]
     [SerializeField] TextMeshProUGUI debugText;
@@ -132,18 +138,15 @@ public class MessyController : MonoBehaviour
     private bool attack = false;
 
 
-    public static MessyController Instance;
+    public static MessyController Instance { get; private set; }
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
+        if (Instance == null)
             Instance = this;
-        }
+        else
+            Destroy(gameObject);
+        
         health = maxHealth;
     }
 
@@ -184,13 +187,21 @@ public class MessyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (isDead) return;
+
+        if (transform.position.y < fallThresholdY)
+        {
+            Die();
+            return;
+        }
         GetInputs();
         UpdateJumpVariables();
 
         if (pState.dashing) return;
         Flip();
-        if(pState.canMove) Move();
-        if(pState.canJump) Jump();
+        if (pState.canMove) Move();
+        if (pState.canJump) Jump();
         StartDash();
         Attack();
         JumpAttack();
@@ -203,8 +214,34 @@ public class MessyController : MonoBehaviour
 
         HandleProjectileMode();
 
-        debugText.text = $"Health: {health}\n Can Dash: {canDash} \nCan Throw: {canUseProjectile} \nCan Move: {pState.canMove}\n";
+        // debugText.text = $"Health: {health}\n Can Dash: {canDash} \nCan Throw: {canUseProjectile} \nCan Move: {pState.canMove}\n";
 
+    }
+
+    public void Die()
+    {
+        if (isDead) return;
+        isDead = true;
+
+        rb.linearVelocity = Vector2.zero;       // Stop movement
+        anim.SetTrigger("Die");           // Play death animation
+
+        StartCoroutine(Respawn());
+    }
+
+    private IEnumerator Respawn()
+    {
+        // Wait for death animation to finish
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+
+        // Show "Game Over" UI (optional)
+        // GameOverUI.SetActive(true);
+
+        // Reset player
+        transform.position = respawnPoint.position;
+        isDead = false;
+        health = maxHealth;               // restore health
+        anim.SetTrigger("Idle");          // reset animation
     }
 
     private void FixedUpdate()
@@ -221,19 +258,20 @@ public class MessyController : MonoBehaviour
             anim.SetBool("Attack1", false);
             anim.SetBool("Attack2", false);
             anim.SetBool("Attack3", false);
-            
+
             pState.canMove = true;
             pState.canJump = true;
-        } else
+        }
+        else
         {
-            if(Grounded())
+            if (Grounded())
             {
                 rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
                 pState.canMove = false;
                 pState.canJump = false;
                 anim.SetBool("Walking", false);
             }
-            
+
         }
 
         //if dashing, ignore other methods

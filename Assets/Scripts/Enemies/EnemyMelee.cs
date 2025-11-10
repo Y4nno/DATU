@@ -74,13 +74,22 @@ public class EnemyMelee : Enemy
 
         if (isAggroed)
         {
+            Debug.Log("Aggroed");
             if (distance > attackRange)
+            {
                 ChasePlayer();
+                Debug.Log("Chasing");
+            }
             else if (!isAttacking)
+            {
                 StartCoroutine(AttackRoutine());
+                Debug.Log("Attacking");
+            }
+                
         }
         else
         {
+            Debug.Log("Patrolling");
             Patrol();
         }
 

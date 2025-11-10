@@ -103,12 +103,12 @@ TextureImporter:
       name: ranged_SHOOTING-EFFECT_FINAL-Sheet_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 90
-        height: 14
+        x: 5
+        y: 8
+        width: 16
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -121,11 +121,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ranged_SHOOTING-EFFECT_FINAL-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 7
+        width: 16
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5089774, y: 0.5648825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ca24f859d1ef24f974222c27d74b92
+      internalID: -243647667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ranged_SHOOTING-EFFECT_FINAL-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 5
+        width: 16
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5054269, y: 0.543417}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c276217367f43c4abec3eca235f7fc8
+      internalID: 1605419361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3c14e01e9841ea646bb7666bb411d607
     internalID: 0
     vertices: []
     indices: 
@@ -136,6 +180,8 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       ranged_SHOOTING-EFFECT_FINAL-Sheet_0: -5733569262179631306
+      ranged_SHOOTING-EFFECT_FINAL-Sheet_1: -243647667
+      ranged_SHOOTING-EFFECT_FINAL-Sheet_2: 1605419361
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

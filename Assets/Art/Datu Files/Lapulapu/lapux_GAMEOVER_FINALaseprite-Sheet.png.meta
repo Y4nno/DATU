@@ -121,12 +121,12 @@ TextureImporter:
       name: lapux_GAMEOVER_FINALaseprite-Sheet_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 35
-        width: 43
-        height: 46
+        x: 28
+        y: 36
+        width: 41
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -143,12 +143,12 @@ TextureImporter:
       name: lapux_GAMEOVER_FINALaseprite-Sheet_1
       rect:
         serializedVersion: 2
-        x: 75
-        y: 35
-        width: 22
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 76
+        y: 36
+        width: 50
+        height: 54
+      alignment: 9
+      pivot: {x: 0.36729065, y: 0.49700305}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -165,12 +165,12 @@ TextureImporter:
       name: lapux_GAMEOVER_FINALaseprite-Sheet_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 140
         y: 35
-        width: 31
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 55
+        height: 54
+      alignment: 9
+      pivot: {x: 0.36464262, y: 0.5119882}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,37 +184,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lapux_GAMEOVER_FINALaseprite-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 139
-        y: 36
-        width: 24
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8801244420399dea0800000000000000
-      internalID: -5847481003219480440
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: lapux_GAMEOVER_FINALaseprite-Sheet_4
       rect:
         serializedVersion: 2
-        x: 163
-        y: 34
-        width: 32
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 204
+        y: 36
+        width: 62
+        height: 54
+      alignment: 9
+      pivot: {x: 0.45040378, y: 0.4880119}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -227,55 +205,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: lapux_GAMEOVER_FINALaseprite-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 203
-        y: 35
-        width: 32
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 63654467cd44e0d80800000000000000
-      internalID: -8282606951020079562
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lapux_GAMEOVER_FINALaseprite-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 235
-        y: 35
-        width: 32
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 78367663ae9b9e2f0800000000000000
-      internalID: -943018231371177081
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8e78f28fde79d2f4f80f228911fb4658
     internalID: 0
     vertices: []
     indices: 
@@ -283,15 +217,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":41.0,"y":54.0},"gridSpriteOffset":{"x":28.0,"y":10.0},"gridSpritePadding":{"x":6.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       lapux_GAMEOVER_FINALaseprite-Sheet_0: 2744926510883598128
       lapux_GAMEOVER_FINALaseprite-Sheet_1: -8642476176250565312
       lapux_GAMEOVER_FINALaseprite-Sheet_2: 448805636808052935
       lapux_GAMEOVER_FINALaseprite-Sheet_3: -5847481003219480440
       lapux_GAMEOVER_FINALaseprite-Sheet_4: -2603303671656825929
-      lapux_GAMEOVER_FINALaseprite-Sheet_5: -8282606951020079562
-      lapux_GAMEOVER_FINALaseprite-Sheet_6: -943018231371177081
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
