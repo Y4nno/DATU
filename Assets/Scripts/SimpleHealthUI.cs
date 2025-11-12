@@ -6,38 +6,73 @@ using UnityEngine.UI;
 public class HealthUI : MonoBehaviour
 {
     [Header("Heart UI Settings")]
-    [SerializeField] private GameObject heartPrefab; // Assign a heart sprite/image prefab
-    [SerializeField] private Transform heartContainer; // Parent object for hearts (e.g., a panel)
+    [SerializeField] private GameObject heartPrefab;
+    [SerializeField] private Transform heartContainer;
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite halfHeart;
     [SerializeField] private Sprite emptyHeart;
 
     private List<Image> hearts = new List<Image>();
     private MessyController player;
+    private static HealthUI instance;
+    private bool hasInitialized = false;
+
+    void Awake()
+    {
+        Debug.Log("HealthUI Awake called");
+
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(transform.root.gameObject);
+            Debug.Log("HealthUI set as instance and persisted");
+        }
+        else
+        {
+            Debug.Log("Duplicate HealthUI found, destroying");
+            Destroy(gameObject);
+            return;
+        }
+    }
 
     void Start()
     {
+        Debug.Log("HealthUI Start called");
         player = MessyController.Instance;
-        InitializeHearts();
+
+        if (player == null)
+        {
+            Debug.LogError("Player (MessyController) not found!");
+        }
+
+        if (!hasInitialized)
+        {
+            InitializeHearts();
+            hasInitialized = true;
+            Debug.Log($"Hearts initialized. Count: {hearts.Count}");
+        }
     }
 
     void Update()
     {
+        if (player == null)
+        {
+            player = MessyController.Instance;
+        }
+
         UpdateHearts();
     }
 
     void InitializeHearts()
     {
-        // Clear existing hearts
         foreach (Transform child in heartContainer)
         {
             Destroy(child.gameObject);
         }
         hearts.Clear();
 
-        // Create hearts based on max health
-        // Assuming each heart = 2 HP, adjust as needed
         int heartCount = Mathf.CeilToInt(player.maxHealth / 2f);
+        Debug.Log($"Creating {heartCount} hearts for max health: {player.maxHealth}");
 
         for (int i = 0; i < heartCount; i++)
         {
@@ -49,27 +84,32 @@ public class HealthUI : MonoBehaviour
 
     void UpdateHearts()
     {
+        if (player == null) return;
+
         int currentHealth = player.health;
 
         for (int i = 0; i < hearts.Count; i++)
         {
-            int heartValue = (i + 1) * 2; // Each heart represents 2 HP
+            if (hearts[i] == null)
+            {
+                Debug.LogError($"Heart {i} is null! Hearts are being destroyed.");
+                return;
+            }
+
+            int heartValue = (i + 1) * 2;
 
             if (currentHealth >= heartValue)
             {
-                // Full heart
                 hearts[i].sprite = fullHeart;
                 hearts[i].enabled = true;
             }
             else if (currentHealth == heartValue - 1)
             {
-                // Half heart
                 hearts[i].sprite = halfHeart;
                 hearts[i].enabled = true;
             }
             else
             {
-                // Empty heart
                 hearts[i].sprite = emptyHeart;
                 hearts[i].enabled = true;
             }

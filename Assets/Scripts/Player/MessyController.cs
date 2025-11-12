@@ -60,7 +60,8 @@ public class MessyController : MonoBehaviour
 
     [SerializeField] private LayerMask attackableLayer; //the layer the player can attack and recoil off of
 
-    [SerializeField] private float attackCooldown = 0.25f;
+    [SerializeField] private float attackTimerLimit = 0.25f;
+    private float attackTimer = 0f;
 
     [SerializeField] private int damage1 = 1; //the damage the player does to an enemy
     [SerializeField] private int damage2 = 1; //the damage the player does to an enemy
@@ -77,6 +78,7 @@ public class MessyController : MonoBehaviour
     //Resets attack type after timer has gone
     [SerializeField] private float ComboTimer = 0f;
     [SerializeField] private float ComboTimerLimit = 1f;
+    private bool comboActive = false;
 
     [Space(5)]
 
@@ -113,16 +115,22 @@ public class MessyController : MonoBehaviour
 
     [Header("Respawn Settings")]
     [SerializeField] private Transform respawnPoint; // assign the start of the stage
-    [SerializeField] private float fallThresholdY = -10f; // y position considered "fall off map"
+    [SerializeField] private Transform fallThresholdY; // y position considered "fall off map"
     private bool isDead = false;
     AudioManager audioManager;
 
+    [Header("Heal Settings")]
+    private bool canHeal = false;
+
+    private int healAmount = 2;
+
+    [SerializeField] float HealTimer = 10f;
 
     [Header("Debug Settings")]
-    [SerializeField] TextMeshProUGUI debugText;
+    [SerializeField] private bool debugTextOn = true;
+    private TextMeshProUGUI debugText;
+
     [Space(5)]
-
-
 
     [HideInInspector] public PlayerStateList pState;
     private Transform tf;
@@ -136,8 +144,6 @@ public class MessyController : MonoBehaviour
     //Input Variables
     private float xAxis, yAxis;
     private bool attack = false;
-
-
     public static MessyController Instance { get; private set; }
 
     private void Awake()
@@ -169,7 +175,6 @@ public class MessyController : MonoBehaviour
         health = maxHealth;
     }
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -189,9 +194,9 @@ public class MessyController : MonoBehaviour
         //Declaring a struct to cycle between different attack properties
         attackType = new AttackData[]
         {
-            new AttackData(damage1, slashEffect1, "Attack1"),
-            new AttackData(damage2, slashEffect1, "Attack2"),
-            new AttackData(damage3, slashEffect2, "Attack3"),
+            new AttackData(damage1, slashEffect1, "Attack1", audioManager.attack),
+            new AttackData(damage2, slashEffect1, "Attack2", audioManager.attack),
+            new AttackData(damage3, slashEffect2, "Attack3", audioManager.attack2),
         };
     }
 
@@ -209,7 +214,7 @@ public class MessyController : MonoBehaviour
 
         if (isDead) return;
 
-        if (transform.position.y < fallThresholdY || health <= 0)
+        if (transform.position.y < fallThresholdY.position.y || health <= 0)
         {
             Die();
             return;
@@ -219,15 +224,32 @@ public class MessyController : MonoBehaviour
 
         if (pState.dashing) return;
         Flip();
-        if (pState.canMove) Move();
+        bool halt = pState.canMove || !pState.canAttack;
+        if (halt) Move();
         if (pState.canJump) Jump();
         StartDash();
         Attack();
         JumpAttack();
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (comboActive)
         {
-            Heal(2); // heals 2 HP
+            ComboTimer += Time.deltaTime;
+            if (ComboTimer >= ComboTimerLimit)
+            {
+                comboActive = false;
+                AttackCounter = 0;
+
+                anim.SetBool("Attack1", false);
+                anim.SetBool("Attack2", false);
+                anim.SetBool("Attack3", false);
+
+                Debug.Log("Combo Timer Finished");
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.F) && canHeal)
+        {
+            Heal(healAmount); // heals 2 HP
         }
 
 
@@ -265,36 +287,15 @@ public class MessyController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Keeps track of velocity, for Jumping/Falling anim reference
         anim.SetFloat("Velocity", rb.linearVelocity.y);
 
-        ComboTimer += Time.deltaTime;
-
-        if (ComboTimer >= ComboTimerLimit)
-        {
-            AttackCounter = 0;
-
-            anim.SetBool("Attack1", false);
-            anim.SetBool("Attack2", false);
-            anim.SetBool("Attack3", false);
-
-            pState.canMove = true;
-            pState.canJump = true;
-        }
-        else
-        {
-            if (Grounded())
-            {
-                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-                pState.canMove = false;
-                pState.canJump = false;
-                anim.SetBool("Walking", false);
-            }
-
-        }
-
-        //if dashing, ignore other methods
         if (pState.dashing) return;
+
+        if (Grounded() && pState.GroundLock)
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+
+        
+            
         Recoil();
     }
 
@@ -322,8 +323,7 @@ public class MessyController : MonoBehaviour
     }
 
     private void Move()
-    {
-
+    { 
         rb.linearVelocity = new Vector2(walkSpeed * xAxis, rb.linearVelocity.y);
         anim.SetBool("Walking", rb.linearVelocity.x != 0 && Grounded());
     }
@@ -369,22 +369,62 @@ public class MessyController : MonoBehaviour
 
     IEnumerator AttackCooldown()
     {
-        pState.canAttack = false;
-        yield return new WaitForSeconds(attackCooldown);
+        attackTimer = 0f;
+
+        while (attackTimer <= attackTimerLimit)
+        {
+
+            pState.canAttack = false;
+            pState.canMove = false;
+            attackTimer += Time.deltaTime;
+            yield return null;
+        }
+
+        
+        pState.canMove = true;
         pState.canAttack = true;
+
     }
+
+    IEnumerator Groundlock()
+    {
+        float timeSinceAttack = 0f;
+
+        while (timeSinceAttack <= attackTimerLimit)
+        {
+            pState.GroundLock = true;
+            timeSinceAttack += Time.deltaTime;
+            yield return null;
+        }
+        
+        pState.GroundLock = false;
+    }
+
     void Attack()
     {
         if (attack && pState.canAttack && !pState.jumping)
         {
 
             StartCoroutine(AttackCooldown());
+            StartCoroutine(Groundlock());
+
+            if (!comboActive)
+            {
+                comboActive = true;
+                ComboTimer = 0f;
+            }
+            else
+            {
+                ComboTimer = 0f; // reset combo timer when chaining attacks
+            }
 
             ComboTimer = 0f;
 
             //Debug.Log($"AttackCounter = {AttackCounter}, animation = {attackType[AttackCounter].animation}");
             anim.SetBool(attackType[AttackCounter].animation, true);
+            audioManager.PlaySFX(attackType[AttackCounter].sfx);
             AttackCounterPlusOne = AttackCounter + 1;
+
 
             //Turns other animations off
             for (int i = 0; i < attackType.Length - 1; i++)
@@ -539,7 +579,8 @@ public class MessyController : MonoBehaviour
         pState.invincible = true;
         anim.SetTrigger("TakeDamage");
         ClampHealth();
-        yield return new WaitForSeconds(1f);
+
+        yield return new WaitForSeconds(2f);
         pState.invincible = false;
     }
     void ClampHealth()
@@ -685,6 +726,7 @@ public class MessyController : MonoBehaviour
 
     void Heal(int amount)
     {
+
         health = Mathf.Clamp(health + amount, 0, maxHealth);
 
         Debug.Log($"Healed {amount}, current HP: {health}");
@@ -693,16 +735,25 @@ public class MessyController : MonoBehaviour
         GameObject healSpirit = SummonSpirit(HealingGod, healOffset);
         audioManager.PlaySFX(audioManager.heal);
         Animator healAnim = healSpirit.GetComponent<Animator>();
-    if (healAnim != null)
-    {
-        healAnim.SetTrigger("Heal");
-        float animLength = healAnim.GetCurrentAnimatorStateInfo(0).length;
-        Destroy(healSpirit, animLength);
+        if (healAnim != null)
+        {
+            healAnim.SetTrigger("Heal");
+            float animLength = healAnim.GetCurrentAnimatorStateInfo(0).length;
+            Destroy(healSpirit, animLength);
+        }
+        else
+        {
+            Destroy(healSpirit, 2f);
+        }
+
+        StartCoroutine(HealCooldown());
     }
-    else
+
+    IEnumerator HealCooldown()
     {
-        Destroy(healSpirit, 2f);
-    }
+        canHeal = false;
+        yield return new WaitForSeconds(HealTimer);
+        canHeal = true;
     }
 
     public GameObject SummonSpirit(GameObject spirit, Vector3 offset)

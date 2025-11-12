@@ -24,10 +24,7 @@ public class EnemyRanged : Enemy
     private bool isAggro;
     private bool isDead;
 
-    private Animator anim;
-
-    [SerializeField] protected MessyController desperatePlayer;
-    
+    private Animator anim;    
     private SpriteRenderer sr;
 
 
@@ -49,7 +46,7 @@ public class EnemyRanged : Enemy
 
 
         Collider2D[] aggroHits = Physics2D.OverlapCircleAll(transform.position, aggroRange, LayerMask.GetMask("Player"));
-        if (aggroHits.Length > 0)
+        if (aggroHits.Length > 0 || beenHit)
         {
             isAggro = true;
             chaseTimer = chaseDuration;
@@ -57,11 +54,11 @@ public class EnemyRanged : Enemy
 
         if (health <= 0)
         {
-            StartCoroutine(Die());
+            Die();
             return;
         }
 
-        float distToPlayer = Vector2.Distance(transform.position, desperatePlayer.transform.position);
+        float distToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
         if (isAggro)
 
@@ -78,6 +75,7 @@ public class EnemyRanged : Enemy
                     ChasePlayer();
                 else
                     isAggro = false;
+                beenHit = false;
             }
             else
             {
@@ -95,10 +93,10 @@ public class EnemyRanged : Enemy
     }
     private void FacePlayer()
 {
-    if (desperatePlayer == null) return;
+    if (player == null) return;
 
     // Flip sprite based on player position
-    if (desperatePlayer.transform.position.x > transform.position.x)
+    if (player.transform.position.x > transform.position.x)
         sr.flipX = false; // facing right
     else
         sr.flipX = true;  // facing left
@@ -145,7 +143,7 @@ public class EnemyRanged : Enemy
 
     private void ChasePlayer()
     {
-        Vector2 dir = (desperatePlayer.transform.position - transform.position).normalized;
+        Vector2 dir = (player.transform.position - transform.position).normalized;
         rb.linearVelocity = dir * speed;
         anim.SetBool("isMoving", true);
     }
@@ -172,29 +170,38 @@ public class EnemyRanged : Enemy
 
     private void KiteAway()
     {
-        Vector2 dir = (transform.position - desperatePlayer.transform.position).normalized;
+        Vector2 dir = (transform.position - player.transform.position).normalized;
         rb.linearVelocity = dir * (speed * 1.2f); // back away a bit faster
         anim.SetBool("isMoving", true);
     }
 
-    private IEnumerator Die()
+    private void Die()
     {
         isDead = true;
-        rb.linearVelocity = Vector2.zero;
         anim.SetTrigger("Die");
-
-        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length * 0.95f);
-
-        // Spawn corpse
-        GameObject corpse = new GameObject("EnemyCorpse");
-        SpriteRenderer sr = corpse.AddComponent<SpriteRenderer>();
-        sr.sprite = GetComponent<SpriteRenderer>().sprite;
-        sr.sortingLayerID = GetComponent<SpriteRenderer>().sortingLayerID;
-        sr.sortingOrder = GetComponent<SpriteRenderer>().sortingOrder;
-        sr.flipX = GetComponent<SpriteRenderer>().flipX;
-        corpse.transform.position = transform.position;
-        corpse.transform.localScale = transform.localScale;
-
-        Destroy(gameObject);
+        rb.linearVelocity = Vector2.zero;
+        // Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
+        StartCoroutine(DeathSequence());
     }
+
+        private IEnumerator DeathSequence()
+{
+    // Wait until the death animation finishes
+    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length * 0.95f);
+
+    // Create corpse sprite object before destroying
+    GameObject corpse = new GameObject("EnemyCorpse");
+    SpriteRenderer sr = corpse.AddComponent<SpriteRenderer>();
+    sr.sprite = GetComponent<SpriteRenderer>().sprite; // current frame of the dead enemy
+    sr.sortingLayerID = GetComponent<SpriteRenderer>().sortingLayerID;
+    sr.sortingOrder = GetComponent<SpriteRenderer>().sortingOrder;
+    sr.flipX = GetComponent<SpriteRenderer>().flipX;
+    corpse.transform.position = transform.position;
+    corpse.transform.localScale = transform.localScale;
+
+    // Optional: give corpse its own layer or fade effect later
+    // corpse.layer = LayerMask.NameToLayer("Decor");
+
+    Destroy(gameObject); // remove the enemy logic and collider
+}
 }

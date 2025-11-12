@@ -10,6 +10,8 @@ public class Bolt : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private Transform player;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -17,8 +19,21 @@ public class Bolt : MonoBehaviour
 
     private void Start()
     {
-        // Launch forward
-        rb.linearVelocity = transform.right * speed;
+        // Find the player (make sure your player GameObject has the "Player" tag)
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        if (player != null)
+        {
+            // Compute direction toward player
+            Vector2 direction = (player.position - transform.position).normalized;
+
+            // Rotate bolt to face player
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+
+            // Launch toward player
+            rb.linearVelocity = direction * speed;
+        }
 
         // Auto-destroy after lifetime
         Destroy(gameObject, lifetime);

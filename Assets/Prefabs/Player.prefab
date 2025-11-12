@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 198150258451392130}
   - component: {fileID: 8620837398605670464}
   - component: {fileID: 2831990716048532304}
+  - component: {fileID: 3091570799832621488}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -338,6 +339,22 @@ MonoBehaviour:
   lookingRight: 0
   invincible: 0
   IsGrounded: 0
+--- !u!111 &3091570799832621488
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2891457813295841707}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1 &5793729004723592881
 GameObject:
   m_ObjectHideFlags: 0
