@@ -13,7 +13,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip heal;
     public AudioClip dash;
     public AudioClip projectile;
-    public AudioClip block;
+    public AudioClip jump;
+    public AudioClip land;
+
     private void Start()
     {
         musicSource.clip = background;

@@ -610,7 +610,7 @@ public class MessyController : MonoBehaviour
                 //Terresquall method
                 rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce);
 
-
+                audioManager.PlaySFX(audioManager.jump);
 
                 pState.jumping = true;
             }
