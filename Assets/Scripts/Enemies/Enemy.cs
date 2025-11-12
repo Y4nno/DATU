@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float recoilFactor;
     [SerializeField] protected bool isRecoiling = false;
 
-    [SerializeField] protected MessyController player;
+    protected MessyController player;
     [SerializeField] protected float speed;
     [SerializeField] protected float damage;
 
@@ -26,16 +26,16 @@ public class Enemy : MonoBehaviour
     //float player_distance;
     //[SerializeField] bool ready_to_attack;
 
-    protected virtual void Start()
+    public void Init(MessyController player, Vector3 coordinates)
     {
+        // populates the private fields of this Enemy object to be used by whatever methods nad logic the enemy class has.
+        this.player = player;
+        transform.position = coordinates;
 
-    }
-    protected virtual void Awake()
-    {
         rb = GetComponent<Rigidbody2D>();
-        player = MessyController.Instance;
+
+                
     }
-    // Update is called once per frame
     protected virtual void Update()
     {
         if (health <= 0)

@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 60659be26b3f0ac4ab9d6eedc945f2f6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6229494702724716194
+    second: magellan_shooting_final-Sheet_0
+  - first:
+      213: -2833520133635140391
+    second: magellan_shooting_final-Sheet_1
+  - first:
+      213: -1399457733268029095
+    second: magellan_shooting_final-Sheet_2
+  - first:
+      213: -2670439593264713626
+    second: magellan_shooting_final-Sheet_3
+  - first:
+      213: -7706143483110690922
+    second: magellan_shooting_final-Sheet_4
+  - first:
+      213: 147645140623533995
+    second: magellan_shooting_final-Sheet_5
+  - first:
+      213: -6955961801794380011
+    second: magellan_shooting_final-Sheet_6
+  - first:
+      213: 8367652385783580880
+    second: magellan_shooting_final-Sheet_7
+  - first:
+      213: 5256972174107422787
+    second: magellan_shooting_final-Sheet_8
+  - first:
+      213: -1125173066888600719
+    second: magellan_shooting_final-Sheet_9
+  - first:
+      213: 3017918089884794404
+    second: magellan_shooting_final-Sheet_10
+  - first:
+      213: 5718228852137141104
+    second: magellan_shooting_final-Sheet_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: magellan_shooting_final-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 59
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a695164d6c937650800000000000000
+      internalID: 6229494702724716194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magellan_shooting_final-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 0
+        width: 59
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d492ca73705da8d0800000000000000
+      internalID: -2833520133635140391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magellan_shooting_final-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 57
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 951c2623b90249ce0800000000000000
+      internalID: -1399457733268029095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magellan_shooting_final-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 0
+        width: 77
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6607159a651b0fad0800000000000000
+      internalID: -2670439593264713626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magellan_shooting_final-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 0
+        width: 77
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69feefcb4574e0590800000000000000
+      internalID: -7706143483110690922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magellan_shooting_final-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 0
+        width: 77
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba7adaf197a8c0200800000000000000
+      internalID: 147645140623533995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magellan_shooting_final-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 0
+        width: 77
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51f1cd47895777f90800000000000000
+      internalID: -6955961801794380011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magellan_shooting_final-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 0
+        width: 86
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d8849ad28fdf1470800000000000000
+      internalID: 8367652385783580880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magellan_shooting_final-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 51
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34039c7f65484f840800000000000000
+      internalID: 5256972174107422787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magellan_shooting_final-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 0
+        width: 57
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 173a44d9e059260f0800000000000000
+      internalID: -1125173066888600719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magellan_shooting_final-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 0
+        width: 59
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42efecc538cc1e920800000000000000
+      internalID: 3017918089884794404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magellan_shooting_final-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 0
+        width: 59
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 073260438da3b5f40800000000000000
+      internalID: 5718228852137141104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      magellan_shooting_final-Sheet_0: 6229494702724716194
+      magellan_shooting_final-Sheet_1: -2833520133635140391
+      magellan_shooting_final-Sheet_10: 3017918089884794404
+      magellan_shooting_final-Sheet_11: 5718228852137141104
+      magellan_shooting_final-Sheet_2: -1399457733268029095
+      magellan_shooting_final-Sheet_3: -2670439593264713626
+      magellan_shooting_final-Sheet_4: -7706143483110690922
+      magellan_shooting_final-Sheet_5: 147645140623533995
+      magellan_shooting_final-Sheet_6: -6955961801794380011
+      magellan_shooting_final-Sheet_7: 8367652385783580880
+      magellan_shooting_final-Sheet_8: 5256972174107422787
+      magellan_shooting_final-Sheet_9: -1125173066888600719
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
