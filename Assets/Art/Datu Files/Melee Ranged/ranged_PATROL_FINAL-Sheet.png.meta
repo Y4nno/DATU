@@ -142,12 +142,12 @@ TextureImporter:
       name: ranged_PATROL_FINAL-Sheet_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 2
-        width: 26
+        x: 7
+        y: 3
+        width: 27
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -164,12 +164,12 @@ TextureImporter:
       name: ranged_PATROL_FINAL-Sheet_1
       rect:
         serializedVersion: 2
-        x: 65
-        y: 3
-        width: 26
-        height: 48
+        x: 64
+        y: 4
+        width: 27
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -186,12 +186,12 @@ TextureImporter:
       name: ranged_PATROL_FINAL-Sheet_2
       rect:
         serializedVersion: 2
-        x: 123
-        y: 3
-        width: 26
+        x: 122
+        y: 4
+        width: 27
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -208,12 +208,12 @@ TextureImporter:
       name: ranged_PATROL_FINAL-Sheet_3
       rect:
         serializedVersion: 2
-        x: 182
-        y: 3
-        width: 26
+        x: 181
+        y: 4
+        width: 27
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -230,12 +230,12 @@ TextureImporter:
       name: ranged_PATROL_FINAL-Sheet_4
       rect:
         serializedVersion: 2
-        x: 239
-        y: 3
-        width: 28
-        height: 47
+        x: 240
+        y: 4
+        width: 27
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: ranged_PATROL_FINAL-Sheet_5
       rect:
         serializedVersion: 2
-        x: 298
-        y: 3
-        width: 28
-        height: 47
+        x: 299
+        y: 4
+        width: 27
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -274,12 +274,12 @@ TextureImporter:
       name: ranged_PATROL_FINAL-Sheet_6
       rect:
         serializedVersion: 2
-        x: 358
-        y: 3
-        width: 28
-        height: 48
+        x: 359
+        y: 4
+        width: 27
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -296,12 +296,12 @@ TextureImporter:
       name: ranged_PATROL_FINAL-Sheet_7
       rect:
         serializedVersion: 2
-        x: 417
-        y: 3
-        width: 28
-        height: 48
+        x: 418
+        y: 4
+        width: 27
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -318,12 +318,12 @@ TextureImporter:
       name: ranged_PATROL_FINAL-Sheet_8
       rect:
         serializedVersion: 2
-        x: 474
-        y: 3
-        width: 29
-        height: 51
+        x: 475
+        y: 4
+        width: 27
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -340,12 +340,12 @@ TextureImporter:
       name: ranged_PATROL_FINAL-Sheet_9
       rect:
         serializedVersion: 2
-        x: 533
-        y: 3
-        width: 29
-        height: 51
+        x: 534
+        y: 4
+        width: 27
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -362,12 +362,12 @@ TextureImporter:
       name: ranged_PATROL_FINAL-Sheet_10
       rect:
         serializedVersion: 2
-        x: 593
-        y: 3
-        width: 28
-        height: 47
+        x: 594
+        y: 4
+        width: 27
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -384,12 +384,12 @@ TextureImporter:
       name: ranged_PATROL_FINAL-Sheet_11
       rect:
         serializedVersion: 2
-        x: 652
-        y: 3
-        width: 28
-        height: 47
+        x: 653
+        y: 4
+        width: 27
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -406,12 +406,12 @@ TextureImporter:
       name: ranged_PATROL_FINAL-Sheet_12
       rect:
         serializedVersion: 2
-        x: 712
-        y: 3
-        width: 28
-        height: 48
+        x: 713
+        y: 4
+        width: 27
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -428,12 +428,12 @@ TextureImporter:
       name: ranged_PATROL_FINAL-Sheet_13
       rect:
         serializedVersion: 2
-        x: 771
-        y: 3
-        width: 28
-        height: 48
+        x: 772
+        y: 4
+        width: 27
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -450,7 +450,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a3c86c7cee629954190b6269e6b20140
     internalID: 0
     vertices: []
     indices: 
@@ -458,7 +458,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":27.0,"y":49.0},"gridSpriteOffset":{"x":9.0,"y":3.0},"gridSpritePadding":{"x":27.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       ranged_PATROL_FINAL-Sheet_0: -1662013680868196573
       ranged_PATROL_FINAL-Sheet_1: -8037500375866952967

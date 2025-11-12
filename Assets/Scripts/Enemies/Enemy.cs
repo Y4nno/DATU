@@ -9,13 +9,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float recoilFactor;
     [SerializeField] protected bool isRecoiling = false;
 
-    [SerializeField] protected MessyController player;
+    protected MessyController player;
     [SerializeField] protected float speed;
     [SerializeField] protected float damage;
 
     protected float recoilTimer;
     protected Rigidbody2D rb;
-
+    protected AudioManager audioManager;
     //[Header("Health")]
     //[SerializeField][Range(0, 5)] float attack_range = 1;
     //[SerializeField][Range(0, 5)] float attack_delay = 1;
@@ -26,16 +26,44 @@ public class Enemy : MonoBehaviour
     //float player_distance;
     //[SerializeField] bool ready_to_attack;
 
-    protected virtual void Start()
+    public void Init(MessyController player, Vector3 coordinates)
     {
+        // populates the private fields of this Enemy object to be used by whatever methods nad logic the enemy class has.
+        this.player = player;
+        transform.position = coordinates;
 
+        rb = GetComponent<Rigidbody2D>();
+
+                
     }
+
     protected virtual void Awake()
     {
+        GameObject audioObject = GameObject.FindGameObjectWithTag("Audio");
+
+        if (audioObject == null)
+        {
+            Debug.LogError("No GameObject with tag 'Audio' found in scene!");
+        }
+        else
+        {
+            Debug.Log("Found Audio GameObject: " + audioObject.name);
+            audioManager = audioObject.GetComponent<AudioManager>();
+
+            if (audioManager == null)
+            {
+                Debug.LogError("AudioManager component not found on " + audioObject.name);
+            }
+            else
+            {
+                Debug.Log("AudioManager successfully initialized!");
+            }
+        }
+
         rb = GetComponent<Rigidbody2D>();
         player = MessyController.Instance;
     }
-    // Update is called once per frame
+
     protected virtual void Update()
     {
         if (health <= 0)

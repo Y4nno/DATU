@@ -34,9 +34,8 @@ public class EnemyMelee : Enemy
     private bool isDead = false;
     private Animator anim;
 
-    protected override void Start()
+    protected void Start()
     {
-        base.Start();
         anim = GetComponent<Animator>();
         patrolStartPos = transform.position;
         health = 5f; // default health
@@ -75,9 +74,14 @@ public class EnemyMelee : Enemy
         if (isAggroed)
         {
             if (distance > attackRange)
+            {
                 ChasePlayer();
+            }
             else if (!isAttacking)
+            {
                 StartCoroutine(AttackRoutine());
+            }
+                
         }
         else
         {
@@ -139,13 +143,12 @@ public class EnemyMelee : Enemy
         //string animTrigger = (attackType == 0) ? "AttackA" : "AttackB";
 
         yield return new WaitForSeconds(attackDelay);
-        anim.SetBool("Attack", true);
+        anim.SetTrigger("Attack");
         MessyController.Instance.TakeDamage(damage);
         //DoAttack();
 
         yield return new WaitForSeconds(attackCooldown);
         isAttacking = false;
-        anim.SetBool("Attack", false);
     }
 
     //private void DoAttack()
@@ -162,10 +165,21 @@ public class EnemyMelee : Enemy
     public override void EnemyHit(float _damageDone, Vector2 _hitDirection, float _hitForce)
     {
         base.EnemyHit(_damageDone, _hitDirection, _hitForce);
-        if (health > 0)
-            StartCoroutine(Hitstun());
+
+        if (audioManager == null)
+        {
+            Debug.LogError("AudioManager is NULL!");
+        }
         else
+        {
+            Debug.Log("Playing attack sound");
+            audioManager.PlaySFX(audioManager.attack);
+        }
+
+        if (health <= 0)
+        {
             Die();
+        }
     }
 
     private IEnumerator Hitstun()

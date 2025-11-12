@@ -111,6 +111,12 @@ public class MessyController : MonoBehaviour
     [SerializeField] GameObject DashGod;
     [SerializeField] GameObject HealingGod;
 
+    [Header("Respawn Settings")]
+    [SerializeField] private Transform respawnPoint; // assign the start of the stage
+    [SerializeField] private float fallThresholdY = -10f; // y position considered "fall off map"
+    private bool isDead = false;
+    AudioManager audioManager;
+
 
     [Header("Debug Settings")]
     [SerializeField] TextMeshProUGUI debugText;
@@ -132,10 +138,26 @@ public class MessyController : MonoBehaviour
     private bool attack = false;
 
 
-    public static MessyController Instance;
+    public static MessyController Instance { get; private set; }
 
     private void Awake()
     {
+        // Initialize AudioManage
+        GameObject audioObject = GameObject.FindGameObjectWithTag("Audio");
+        if (audioObject != null)
+        {
+            audioManager = audioObject.GetComponent<AudioManager>();
+            if (audioManager == null)
+            {
+                Debug.LogError("AudioManager component not found on Audio GameObject!");
+            }
+        }
+        else
+        {
+            Debug.LogError("No GameObject with tag 'Audio' found!");
+        }
+
+        // Singleton pattern
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -184,13 +206,21 @@ public class MessyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (isDead) return;
+
+        if (transform.position.y < fallThresholdY || health <= 0)
+        {
+            Die();
+            return;
+        }
         GetInputs();
         UpdateJumpVariables();
 
         if (pState.dashing) return;
         Flip();
-        if(pState.canMove) Move();
-        if(pState.canJump) Jump();
+        if (pState.canMove) Move();
+        if (pState.canJump) Jump();
         StartDash();
         Attack();
         JumpAttack();
@@ -203,8 +233,34 @@ public class MessyController : MonoBehaviour
 
         HandleProjectileMode();
 
-        debugText.text = $"Health: {health}\n Can Dash: {canDash} \nCan Throw: {canUseProjectile} \nCan Move: {pState.canMove}\n";
+        // debugText.text = $"Health: {health}\n Can Dash: {canDash} \nCan Throw: {canUseProjectile} \nCan Move: {pState.canMove}\n";
 
+    }
+
+    public void Die()
+    {
+        if (isDead) return;
+        isDead = true;
+
+        rb.linearVelocity = Vector2.zero;       // Stop movement
+        anim.SetTrigger("Die");           // Play death animation
+
+        StartCoroutine(Respawn());
+    }
+
+    private IEnumerator Respawn()
+    {
+        // Wait for death animation to finish
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+
+        // Show "Game Over" UI (optional)
+        // GameOverUI.SetActive(true);
+
+        // Reset player
+        transform.position = respawnPoint.position;
+        isDead = false;
+        health = maxHealth;               // restore health
+        anim.SetTrigger("Idle");          // reset animation
     }
 
     private void FixedUpdate()
@@ -221,19 +277,20 @@ public class MessyController : MonoBehaviour
             anim.SetBool("Attack1", false);
             anim.SetBool("Attack2", false);
             anim.SetBool("Attack3", false);
-            
+
             pState.canMove = true;
             pState.canJump = true;
-        } else
+        }
+        else
         {
-            if(Grounded())
+            if (Grounded())
             {
                 rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
                 pState.canMove = false;
                 pState.canJump = false;
                 anim.SetBool("Walking", false);
             }
-            
+
         }
 
         //if dashing, ignore other methods
@@ -275,6 +332,7 @@ public class MessyController : MonoBehaviour
     {
         if (Input.GetButtonDown("Dash") && canDash && !dashed)
         {
+            audioManager.PlaySFX(audioManager.dash);
             StartCoroutine(Dash());
             dashed = true;
         }
@@ -474,6 +532,7 @@ public class MessyController : MonoBehaviour
     {
         health -= Mathf.RoundToInt(_damage);
         StartCoroutine(StopTakingDamage());
+        audioManager.PlaySFX(audioManager.hurt);
     }
     IEnumerator StopTakingDamage()
     {
@@ -516,7 +575,7 @@ public class MessyController : MonoBehaviour
                 //Terresquall method
                 rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce);
 
-
+                audioManager.PlaySFX(audioManager.jump);
 
                 pState.jumping = true;
             }
@@ -610,6 +669,7 @@ public class MessyController : MonoBehaviour
         Rigidbody2D prb = projectile.GetComponent<Rigidbody2D>();
         prb.linearVelocity = direction * projectileSpeed;
 
+        audioManager.PlaySFX(audioManager.projectile);
 
         Destroy(projectile, 3f);
 
@@ -631,7 +691,7 @@ public class MessyController : MonoBehaviour
 
         Vector3 healOffset = new Vector3(-0.3f, 0, 0);
         GameObject healSpirit = SummonSpirit(HealingGod, healOffset);
-
+        audioManager.PlaySFX(audioManager.heal);
         Animator healAnim = healSpirit.GetComponent<Animator>();
     if (healAnim != null)
     {
