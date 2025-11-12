@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     protected float recoilTimer;
     protected Rigidbody2D rb;
-
+    protected AudioManager audioManager;
     //[Header("Health")]
     //[SerializeField][Range(0, 5)] float attack_range = 1;
     //[SerializeField][Range(0, 5)] float attack_delay = 1;
@@ -36,6 +36,34 @@ public class Enemy : MonoBehaviour
 
                 
     }
+
+    protected virtual void Awake()
+    {
+        GameObject audioObject = GameObject.FindGameObjectWithTag("Audio");
+
+        if (audioObject == null)
+        {
+            Debug.LogError("No GameObject with tag 'Audio' found in scene!");
+        }
+        else
+        {
+            Debug.Log("Found Audio GameObject: " + audioObject.name);
+            audioManager = audioObject.GetComponent<AudioManager>();
+
+            if (audioManager == null)
+            {
+                Debug.LogError("AudioManager component not found on " + audioObject.name);
+            }
+            else
+            {
+                Debug.Log("AudioManager successfully initialized!");
+            }
+        }
+
+        rb = GetComponent<Rigidbody2D>();
+        player = MessyController.Instance;
+    }
+
     protected virtual void Update()
     {
         if (health <= 0)

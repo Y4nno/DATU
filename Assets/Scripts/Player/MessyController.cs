@@ -115,7 +115,7 @@ public class MessyController : MonoBehaviour
     [SerializeField] private Transform respawnPoint; // assign the start of the stage
     [SerializeField] private float fallThresholdY = -10f; // y position considered "fall off map"
     private bool isDead = false;
-
+    AudioManager audioManager;
 
 
     [Header("Debug Settings")]
@@ -142,11 +142,30 @@ public class MessyController : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-            Instance = this;
+        // Initialize AudioManage
+        GameObject audioObject = GameObject.FindGameObjectWithTag("Audio");
+        if (audioObject != null)
+        {
+            audioManager = audioObject.GetComponent<AudioManager>();
+            if (audioManager == null)
+            {
+                Debug.LogError("AudioManager component not found on Audio GameObject!");
+            }
+        }
         else
+        {
+            Debug.LogError("No GameObject with tag 'Audio' found!");
+        }
+
+        // Singleton pattern
+        if (Instance != null && Instance != this)
+        {
             Destroy(gameObject);
-        
+        }
+        else
+        {
+            Instance = this;
+        }
         health = maxHealth;
     }
 
@@ -313,6 +332,7 @@ public class MessyController : MonoBehaviour
     {
         if (Input.GetButtonDown("Dash") && canDash && !dashed)
         {
+            audioManager.PlaySFX(audioManager.dash);
             StartCoroutine(Dash());
             dashed = true;
         }
@@ -512,6 +532,7 @@ public class MessyController : MonoBehaviour
     {
         health -= Mathf.RoundToInt(_damage);
         StartCoroutine(StopTakingDamage());
+        audioManager.PlaySFX(audioManager.hurt);
     }
     IEnumerator StopTakingDamage()
     {
@@ -648,6 +669,7 @@ public class MessyController : MonoBehaviour
         Rigidbody2D prb = projectile.GetComponent<Rigidbody2D>();
         prb.linearVelocity = direction * projectileSpeed;
 
+        audioManager.PlaySFX(audioManager.projectile);
 
         Destroy(projectile, 3f);
 
@@ -669,7 +691,7 @@ public class MessyController : MonoBehaviour
 
         Vector3 healOffset = new Vector3(-0.3f, 0, 0);
         GameObject healSpirit = SummonSpirit(HealingGod, healOffset);
-
+        audioManager.PlaySFX(audioManager.heal);
         Animator healAnim = healSpirit.GetComponent<Animator>();
     if (healAnim != null)
     {

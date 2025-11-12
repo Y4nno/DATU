@@ -165,10 +165,21 @@ public class EnemyMelee : Enemy
     public override void EnemyHit(float _damageDone, Vector2 _hitDirection, float _hitForce)
     {
         base.EnemyHit(_damageDone, _hitDirection, _hitForce);
-        if (health > 0)
-            StartCoroutine(Hitstun());
+
+        if (audioManager == null)
+        {
+            Debug.LogError("AudioManager is NULL!");
+        }
         else
+        {
+            Debug.Log("Playing attack sound");
+            audioManager.PlaySFX(audioManager.attack);
+        }
+
+        if (health <= 0)
+        {
             Die();
+        }
     }
 
     private IEnumerator Hitstun()

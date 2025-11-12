@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - OneWayPlatform
   - Obstacle
+  - Audio
   layers:
   - Default
   - TransparentFX
