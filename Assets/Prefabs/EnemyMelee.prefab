@@ -216,7 +216,7 @@ MonoBehaviour:
   recoilLength: 1
   recoilFactor: 1
   isRecoiling: 0
-  player: {fileID: 0}
+  player: {fileID: 198150258451392130, guid: 5af14853559e09c469f3fafca5c9bfee, type: 3}
   speed: 1
   damage: 1
   patrolRange: 3

@@ -34,9 +34,8 @@ public class EnemyMelee : Enemy
     private bool isDead = false;
     private Animator anim;
 
-    protected override void Start()
+    protected void Start()
     {
-        base.Start();
         anim = GetComponent<Animator>();
         patrolStartPos = transform.position;
         health = 5f; // default health
@@ -74,22 +73,18 @@ public class EnemyMelee : Enemy
 
         if (isAggroed)
         {
-            Debug.Log("Aggroed");
             if (distance > attackRange)
             {
                 ChasePlayer();
-                Debug.Log("Chasing");
             }
             else if (!isAttacking)
             {
                 StartCoroutine(AttackRoutine());
-                Debug.Log("Attacking");
             }
                 
         }
         else
         {
-            Debug.Log("Patrolling");
             Patrol();
         }
 
@@ -148,13 +143,12 @@ public class EnemyMelee : Enemy
         //string animTrigger = (attackType == 0) ? "AttackA" : "AttackB";
 
         yield return new WaitForSeconds(attackDelay);
-        anim.SetBool("Attack", true);
+        anim.SetTrigger("Attack");
         MessyController.Instance.TakeDamage(damage);
         //DoAttack();
 
         yield return new WaitForSeconds(attackCooldown);
         isAttacking = false;
-        anim.SetBool("Attack", false);
     }
 
     //private void DoAttack()

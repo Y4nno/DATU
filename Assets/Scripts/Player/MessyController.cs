@@ -190,7 +190,7 @@ public class MessyController : MonoBehaviour
 
         if (isDead) return;
 
-        if (transform.position.y < fallThresholdY)
+        if (transform.position.y < fallThresholdY || health <= 0)
         {
             Die();
             return;

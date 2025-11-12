@@ -32,9 +32,8 @@ public class EnemyRanged : Enemy
 
 
 
-    protected override void Start()
+    protected void Start()
     {
-        base.Start();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
 
