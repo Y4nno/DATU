@@ -9,10 +9,7 @@ public class Zombie : Enemy
     {
         rb.gravityScale = 12f;
     }
-    protected void Awake()
-    {
-        
-    }
+
 
     // Update is called once per frame
     protected override void Update()
