@@ -30,6 +30,7 @@ public class Bolt : MonoBehaviour
             // Rotate bolt to face player
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle);
+            transform.localScale = new Vector3(2, 2, 2);
 
             // Launch toward player
             rb.linearVelocity = direction * speed;

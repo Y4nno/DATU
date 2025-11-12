@@ -116,11 +116,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 14
-        y: 9
-        width: 59
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 10
+        width: 58
+        height: 86
+      alignment: 9
+      pivot: {x: 0.32885814, y: 0.5288553}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -137,12 +137,12 @@ TextureImporter:
       name: magellan_attack_FINAL-Sheet_1
       rect:
         serializedVersion: 2
-        x: 81
-        y: 9
-        width: 40
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 77
+        y: 10
+        width: 58
+        height: 86
+      alignment: 9
+      pivot: {x: 0.48573816, y: 0.49679387}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,12 +159,12 @@ TextureImporter:
       name: magellan_attack_FINAL-Sheet_2
       rect:
         serializedVersion: 2
-        x: 153
-        y: 9
-        width: 40
-        height: 65
+        x: 147
+        y: 10
+        width: 58
+        height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: magellan_attack_FINAL-Sheet_3
       rect:
         serializedVersion: 2
-        x: 226
-        y: 9
-        width: 39
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 219
+        y: 10
+        width: 58
+        height: 86
+      alignment: 9
+      pivot: {x: 0.50475365, y: 0.50641227}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -200,23 +200,23 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: magellan_attack_FINAL-Sheet_4
+      name: magellan_attack_FINAL-Sheet_5
       rect:
         serializedVersion: 2
-        x: 302
-        y: 9
-        width: 45
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 299
+        y: 10
+        width: 58
+        height: 86
+      alignment: 9
+      pivot: {x: 0.46672216, y: 0.5256492}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5621fb80c5be03fa0800000000000000
-      internalID: -5822895537673792923
+      spriteID: bf76b6298529c284dbd165288d1ab815
+      internalID: 46001302
       vertices: []
       indices: 
       edges: []
@@ -225,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a14eaed40a498054bb708a15bf0387ac
     internalID: 0
     vertices: []
     indices: 
@@ -233,13 +233,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":58.0,"y":86.0},"gridSpriteOffset":{"x":15.0,"y":10.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       magellan_attack_FINAL-Sheet_0: -698358486286459518
       magellan_attack_FINAL-Sheet_1: 1275079705901339988
       magellan_attack_FINAL-Sheet_2: 454310740705458454
       magellan_attack_FINAL-Sheet_3: -5635122789376752476
       magellan_attack_FINAL-Sheet_4: -5822895537673792923
+      magellan_attack_FINAL-Sheet_5: 46001302
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
