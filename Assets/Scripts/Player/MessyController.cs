@@ -465,7 +465,7 @@ public class MessyController : MonoBehaviour
             else if (yAxis > 0)
             {
                 Hit(damageType, UpAttackTransform, UpAttackArea, ref pState.recoilingY, recoilYSpeed);
-                SlashEffectAtAngle(slashType, 80, UpAttackTransform);
+                SlashEffectAtAngle(slashType, 90, UpAttackTransform);
             }
             else if (yAxis < 0 && !Grounded())
             {

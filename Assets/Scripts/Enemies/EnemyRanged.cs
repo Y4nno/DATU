@@ -17,8 +17,6 @@ public class EnemyRanged : Enemy
     private Vector2 patrolStartPos;                        // Starting position
     private bool movingRight = true;                       // Patrol direction
     private bool isIdle = false;                           // Waiting at edge
-    private int currentPatrolIndex;
-    private bool waiting;
     private float chaseTimer;
     private float shootTimer;
     private bool isAggro;
@@ -34,7 +32,6 @@ public class EnemyRanged : Enemy
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
 
-        currentPatrolIndex = 0;
     }
 
     protected override void Update()
@@ -101,7 +98,6 @@ public class EnemyRanged : Enemy
     else
         sr.flipX = true;  // facing left
 }
-
 
     private void OnDrawGizmos()
     {
