@@ -53,6 +53,7 @@ public class EnemyMelee : Enemy
     {
         yield return new WaitForSeconds(AggroTimer);
         isAggroed = false;
+        beenHit = false;
     }
 
     protected override void Update()
@@ -63,7 +64,7 @@ public class EnemyMelee : Enemy
         if (isDead || isRecoiling) return;
 
         Collider2D[] aggroHits = Physics2D.OverlapBoxAll(AggroBoxTransform.position, AggroBoxArea, 0f, LayerMask.GetMask("Player"));
-        if (aggroHits.Length > 0)
+        if (aggroHits.Length > 0 || beenHit)
         {
             isAggroed = true;
             StartCoroutine(AggroCooldown());
@@ -173,7 +174,6 @@ public class EnemyMelee : Enemy
         else
         {
             Debug.Log("Playing attack sound");
-            audioManager.PlaySFX(audioManager.attack);
         }
 
         if (health <= 0)

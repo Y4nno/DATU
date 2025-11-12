@@ -118,12 +118,12 @@ TextureImporter:
       name: lapux2DAMAGE_FINAL-Sheet_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 5
-        width: 45
+        x: 16
+        y: 6
+        width: 44
         height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.7160502, y: 0.7767623}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: lapux2DAMAGE_FINAL-Sheet_1
       rect:
         serializedVersion: 2
-        x: 79
-        y: 5
+        x: 78
+        y: 6
         width: 44
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 49
+      alignment: 9
+      pivot: {x: 0.7160502, y: 0.7767623}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: lapux2DAMAGE_FINAL-Sheet_2
       rect:
         serializedVersion: 2
-        x: 143
-        y: 5
+        x: 142
+        y: 6
         width: 44
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 49
+      alignment: 9
+      pivot: {x: 0.7160502, y: 0.7767623}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: lapux2DAMAGE_FINAL-Sheet_3
       rect:
         serializedVersion: 2
-        x: 207
-        y: 5
-        width: 35
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 197
+        y: 6
+        width: 44
+        height: 49
+      alignment: 9
+      pivot: {x: 0.7160502, y: 0.7767623}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: lapux2DAMAGE_FINAL-Sheet_4
       rect:
         serializedVersion: 2
-        x: 255
-        y: 5
+        x: 254
+        y: 6
         width: 44
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 49
+      alignment: 9
+      pivot: {x: 0.7160502, y: 0.7767623}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -229,11 +229,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 319
-        y: 6
-        width: 45
+        y: 7
+        width: 44
         height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.7160502, y: 0.7767623}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 040315b3909913243a2987ab24c3e512
     internalID: 0
     vertices: []
     indices: 
@@ -258,7 +258,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":44.0,"y":49.0},"gridSpriteOffset":{"x":16.0,"y":15.0},"gridSpritePadding":{"x":20.0,"y":0.0},"pivot":{"x":0.7160502076148987,"y":0.7767623066902161},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       lapux2DAMAGE_FINAL-Sheet_0: -3148103935315451617
       lapux2DAMAGE_FINAL-Sheet_1: -558343888633694688
