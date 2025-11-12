@@ -7966,6 +7966,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2018982331}
     - target: {fileID: 198150258451392130, guid: 5af14853559e09c469f3fafca5c9bfee, type: 3}
+      propertyPath: maxHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198150258451392130, guid: 5af14853559e09c469f3fafca5c9bfee, type: 3}
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 661082624}
