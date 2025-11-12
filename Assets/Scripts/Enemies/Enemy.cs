@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float speed;
     [SerializeField] protected float damage;
 
+    protected bool beenHit = false;
+
     protected float recoilTimer;
     protected Rigidbody2D rb;
     protected AudioManager audioManager;
@@ -87,6 +89,10 @@ public class Enemy : MonoBehaviour
     public virtual void EnemyHit(float _damageDone, Vector2 _hitDirection, float _hitForce)
     {
         health -= _damageDone;
+        beenHit = true;
+
+        audioManager.PlaySFX(audioManager.hurt2);
+
         if (!isRecoiling)
         {
             rb.AddForce(-_hitForce * recoilFactor * _hitDirection);

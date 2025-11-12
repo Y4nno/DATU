@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour
         if (collision.GetComponent<Enemy>() != null)
         {
             collision.GetComponent<Enemy>().EnemyHit(damage, Vector2.zero, 0);
+
+            Destroy(gameObject);
         }
 
     }

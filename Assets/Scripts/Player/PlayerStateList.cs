@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerStateList : MonoBehaviour
 {
+
     public bool jumping = false;
     public bool dashing = false;
     public bool canMove = true;
@@ -13,6 +14,7 @@ public class PlayerStateList : MonoBehaviour
     public bool lookingRight;
     public bool invincible;
     public bool IsGrounded;
+    public bool GroundLock = false;
 
     //[Header("Ground Check")]
     //[SerializeField] private Transform groundCheckPoint;
