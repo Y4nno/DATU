@@ -115,10 +115,16 @@ public class MessyController : MonoBehaviour
 
     [Header("Respawn Settings")]
     [SerializeField] private Transform respawnPoint; // assign the start of the stage
-    [SerializeField] private float fallThresholdY = -10f; // y position considered "fall off map"
+    [SerializeField] private Transform fallThresholdY; // y position considered "fall off map"
     private bool isDead = false;
     AudioManager audioManager;
 
+    [Header("Heal Settings")]
+    private bool canHeal = false;
+
+    private int healAmount = 2;
+
+    [SerializeField] float HealTimer = 10f;
 
     [Header("Debug Settings")]
     [SerializeField] private bool debugTextOn = true;
@@ -208,7 +214,7 @@ public class MessyController : MonoBehaviour
 
         if (isDead) return;
 
-        if (transform.position.y < fallThresholdY || health <= 0)
+        if (transform.position.y < fallThresholdY.position.y || health <= 0)
         {
             Die();
             return;
@@ -241,9 +247,9 @@ public class MessyController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && canHeal)
         {
-            Heal(2); // heals 2 HP
+            Heal(healAmount); // heals 2 HP
         }
 
 
@@ -720,6 +726,7 @@ public class MessyController : MonoBehaviour
 
     void Heal(int amount)
     {
+
         health = Mathf.Clamp(health + amount, 0, maxHealth);
 
         Debug.Log($"Healed {amount}, current HP: {health}");
@@ -728,16 +735,25 @@ public class MessyController : MonoBehaviour
         GameObject healSpirit = SummonSpirit(HealingGod, healOffset);
         audioManager.PlaySFX(audioManager.heal);
         Animator healAnim = healSpirit.GetComponent<Animator>();
-    if (healAnim != null)
-    {
-        healAnim.SetTrigger("Heal");
-        float animLength = healAnim.GetCurrentAnimatorStateInfo(0).length;
-        Destroy(healSpirit, animLength);
+        if (healAnim != null)
+        {
+            healAnim.SetTrigger("Heal");
+            float animLength = healAnim.GetCurrentAnimatorStateInfo(0).length;
+            Destroy(healSpirit, animLength);
+        }
+        else
+        {
+            Destroy(healSpirit, 2f);
+        }
+
+        StartCoroutine(HealCooldown());
     }
-    else
+
+    IEnumerator HealCooldown()
     {
-        Destroy(healSpirit, 2f);
-    }
+        canHeal = false;
+        yield return new WaitForSeconds(HealTimer);
+        canHeal = true;
     }
 
     public GameObject SummonSpirit(GameObject spirit, Vector3 offset)
