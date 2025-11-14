@@ -128,7 +128,6 @@ public class MessyController : MonoBehaviour
 
     [Header("Debug Settings")]
     [SerializeField] private bool debugTextOn = true;
-    private TextMeshProUGUI debugText;
 
     [Space(5)]
 
