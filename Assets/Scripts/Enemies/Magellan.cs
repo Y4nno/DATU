@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class Magellan : Enemy
 {
@@ -43,6 +42,7 @@ public class Magellan : Enemy
     {
         anim = GetComponent<Animator>();
         patrolStartPos = transform.position;
+        health = 5f; // default health
         attackRange = AttackBoxArea.x;
         rb.freezeRotation = true;
     }
@@ -171,9 +171,14 @@ public class Magellan : Enemy
     {
         base.EnemyHit(_damageDone, _hitDirection, _hitForce);
 
-        audioManager.PlaySFX(audioManager.hurt2);
-
-        Debug.Log($"Health = {health}");
+        if (audioManager == null)
+        {
+            Debug.LogError("AudioManager is NULL!");
+        }
+        else
+        {
+            Debug.Log("Playing attack sound");
+        }
 
         if (health <= 0)
         {
@@ -199,48 +204,27 @@ public class Magellan : Enemy
     }
 private IEnumerator DeathSequence()
 {
-     GameObject fadeObj = new GameObject("FadeOverlay");
-    Canvas canvas = fadeObj.AddComponent<Canvas>();
-    canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-    canvas.sortingOrder = 9999; // Render on top of everything
-    
-    CanvasScaler scaler = fadeObj.AddComponent<CanvasScaler>();
-    scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-    
-    GameObject imageObj = new GameObject("FadeImage");
-    imageObj.transform.SetParent(fadeObj.transform, false);
-    
-    UnityEngine.UI.Image fadeImage = imageObj.AddComponent<UnityEngine.UI.Image>();
-    fadeImage.color = new Color(0, 0, 0, 0); // Start transparent
-    fadeImage.raycastTarget = false;
-    
-    RectTransform rectTransform = imageObj.GetComponent<RectTransform>();
-    rectTransform.anchorMin = Vector2.zero;
-    rectTransform.anchorMax = Vector2.one;
-    rectTransform.sizeDelta = Vector2.zero;
-    rectTransform.anchoredPosition = Vector2.zero;
-    
-    // Fade to black over 1 second
-    float fadeDuration = 1f;
-    float elapsed = 0f;
-    
-    while (elapsed < fadeDuration)
-    {
-        elapsed += Time.deltaTime;
-        float alpha = Mathf.Clamp01(elapsed / fadeDuration);
-        fadeImage.color = new Color(0, 0, 0, alpha);
-        yield return null;
-    }
-    
-    fadeImage.color = Color.black; // Ensure fully black
-    
-    // Wait 1 second in black screen
-    yield return new WaitForSeconds(1f);
+    // Wait until the death animation finishes
+    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length * 0.95f);
+
+    // Create corpse sprite object before destroying
+    GameObject corpse = new GameObject("EnemyCorpse");
+    SpriteRenderer sr = corpse.AddComponent<SpriteRenderer>();
+    sr.sprite = GetComponent<SpriteRenderer>().sprite; // current frame of the dead enemy
+    sr.sortingLayerID = GetComponent<SpriteRenderer>().sortingLayerID;
+    sr.sortingOrder = GetComponent<SpriteRenderer>().sortingOrder;
+    sr.flipX = GetComponent<SpriteRenderer>().flipX;
+    corpse.transform.position = transform.position;
+    corpse.transform.localScale = transform.localScale;
+
+    Destroy(gameObject); // remove the enemy logic and collider
 
     // Wait a little after death before scene transition (optional)
     yield return new WaitForSeconds(0.5f);
 
-    SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+    // Transition to next scene
+    if (!string.IsNullOrEmpty(nextSceneName))
+        SceneManager.LoadScene(nextSceneName);
 }
 
 

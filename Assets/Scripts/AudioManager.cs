@@ -1,9 +1,6 @@
 using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
-
-    public static AudioManager Instance { get; private set; }
-
     [Header("-----------------AUDIO SOURCE-----------------")]
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource SFXSource;
@@ -18,25 +15,6 @@ public class AudioManager : MonoBehaviour
     public AudioClip projectile;
     public AudioClip jump;
     public AudioClip land;
-
-       void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-
-        AudioListener listener = GetComponent<AudioListener>();
-        if (listener != null)
-        {
-            Destroy(listener);
-        }
-    } 
 
     private void Start()
     {

@@ -13,14 +13,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float speed;
     [SerializeField] protected float damage;
 
-    protected SpriteRenderer sr;
-
     protected bool beenHit = false;
 
     protected float recoilTimer;
     protected Rigidbody2D rb;
     protected AudioManager audioManager;
-    
     //[Header("Health")]
     //[SerializeField][Range(0, 5)] float attack_range = 1;
     //[SerializeField][Range(0, 5)] float attack_delay = 1;
@@ -44,12 +41,29 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Awake()
     {
-        sr = GetComponent<SpriteRenderer>();
+        GameObject audioObject = GameObject.FindGameObjectWithTag("Audio");
+
+        if (audioObject == null)
+        {
+            Debug.LogError("No GameObject with tag 'Audio' found in scene!");
+        }
+        else
+        {
+            Debug.Log("Found Audio GameObject: " + audioObject.name);
+            audioManager = audioObject.GetComponent<AudioManager>();
+
+            if (audioManager == null)
+            {
+                Debug.LogError("AudioManager component not found on " + audioObject.name);
+            }
+            else
+            {
+                Debug.Log("AudioManager successfully initialized!");
+            }
+        }
+
         rb = GetComponent<Rigidbody2D>();
         player = MessyController.Instance;
-
-        audioManager = AudioManager.Instance;
-
     }
 
     protected virtual void Update()
@@ -76,7 +90,6 @@ public class Enemy : MonoBehaviour
     {
         health -= _damageDone;
         beenHit = true;
-        StartCoroutine(HurtEffect());
 
         audioManager.PlaySFX(audioManager.hurt2);
 
@@ -84,13 +97,6 @@ public class Enemy : MonoBehaviour
         {
             rb.AddForce(-_hitForce * recoilFactor * _hitDirection);
         }
-    }
-
-    protected IEnumerator HurtEffect()
-    {
-        sr.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
-        sr.color = Color.white;
     }
     protected void OnTriggerStay2D(Collider2D _other)
     {
