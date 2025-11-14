@@ -128,6 +128,7 @@ public class MessyController : MonoBehaviour
 
     [Header("Debug Settings")]
     [SerializeField] private bool debugTextOn = true;
+    private TextMeshProUGUI debugText;
 
     [Space(5)]
 
@@ -147,6 +148,20 @@ public class MessyController : MonoBehaviour
 
     private void Awake()
     {
+        // Initialize AudioManage
+        GameObject audioObject = GameObject.FindGameObjectWithTag("Audio");
+        if (audioObject != null)
+        {
+            audioManager = audioObject.GetComponent<AudioManager>();
+            if (audioManager == null)
+            {
+                Debug.LogError("AudioManager component not found on Audio GameObject!");
+            }
+        }
+        else
+        {
+            Debug.LogError("No GameObject with tag 'Audio' found!");
+        }
 
         // Singleton pattern
         if (Instance != null && Instance != this)
@@ -158,17 +173,11 @@ public class MessyController : MonoBehaviour
             Instance = this;
         }
         health = maxHealth;
-
-        
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        audioManager = AudioManager.Instance;
-
-        respawnPoint.transform.SetParent(respawnPoint.transform, true);
-        fallThresholdY.transform.SetParent(fallThresholdY.transform, true);
         pState = GetComponent<PlayerStateList>();
 
         rb = GetComponent<Rigidbody2D>();
@@ -203,10 +212,6 @@ public class MessyController : MonoBehaviour
     void Update()
     {
 
-        if (OptionsManager.Instance != null && OptionsManager.Instance.IsMenuOpen)
-        return;
-
-
         if (isDead) return;
 
         if (transform.position.y < fallThresholdY.position.y || health <= 0)
@@ -237,6 +242,8 @@ public class MessyController : MonoBehaviour
                 anim.SetBool("Attack1", false);
                 anim.SetBool("Attack2", false);
                 anim.SetBool("Attack3", false);
+
+                Debug.Log("Combo Timer Finished");
             }
         }
 
@@ -244,6 +251,7 @@ public class MessyController : MonoBehaviour
         {
             Heal(healAmount); // heals 2 HP
         }
+
 
         HandleProjectileMode();
 
@@ -428,7 +436,7 @@ public class MessyController : MonoBehaviour
             GameObject slashType = attackType[AttackCounter].effect;
 
                 Hit(damageType, SideAttackTransform, SideAttackArea, ref pState.recoilingX, recoilXSpeed);
-                SlashEffectAtAngle(slashType, 0, SideAttackTransform);
+                Instantiate(slashType, SideAttackTransform);
 
             AttackCounter++;
         }
@@ -447,30 +455,29 @@ public class MessyController : MonoBehaviour
             anim.SetTrigger("JumpAttack");
 
             int damageType = 1;
+            GameObject slashType = slashEffect1;
 
-            audioManager.PlaySFX(audioManager.attack);
-
-
-            if (yAxis == 0)
+            if (yAxis == 0 || yAxis < 0)
             {
                 Hit(damageType, SideAttackTransform, SideAttackArea, ref pState.recoilingX, recoilXSpeed);
-                SlashEffectAtAngle(slashEffect1, 0, SideAttackTransform);
-
-                Debug.Log("Side");
+                Instantiate(slashType, SideAttackTransform);
             }
             else if (yAxis > 0)
             {
                 Hit(damageType, UpAttackTransform, UpAttackArea, ref pState.recoilingY, recoilYSpeed);
-                SlashEffectAtAngle(slashEffect1, 90, UpAttackTransform);
-                Debug.Log("Up");
+                SlashEffectAtAngle(slashType, 90, UpAttackTransform);
             }
             else if (yAxis < 0 && !Grounded())
             {
                 Hit(damageType, DownAttackTransform, DownAttackArea, ref pState.recoilingY, recoilYSpeed);
                 SlashEffectAtAngle(slashEffect1, -90, DownAttackTransform);
-                Debug.Log("Down");
             }
+
+            AttackCounter++;
         }
+        if (AttackCounter >= MaxAttack) AttackCounter = 0;
+        //if (timeSinceAttck >= timeBetweenAttack) AttackCounter = 0;
+
     }
 
     void Hit(int damage, Transform _attackTransform, Vector2 _attackArea, ref bool _recoilDir, float _recoilStrength)
@@ -490,11 +497,11 @@ public class MessyController : MonoBehaviour
             }
         }
     }
-   void SlashEffectAtAngle(GameObject _slashEffect, int _effectAngle, Transform _attackTransform)
+    void SlashEffectAtAngle(GameObject _slashEffect, int _effectAngle, Transform _attackTransform)
     {
-        GameObject slash = Instantiate(_slashEffect, _attackTransform.position, Quaternion.identity);
-        slash.transform.eulerAngles = new Vector3(0, 0, _effectAngle);
-        slash.transform.localScale = new Vector2(_slashEffect.transform.localScale.x, _slashEffect.transform.localScale.y);
+        _slashEffect = Instantiate(_slashEffect, _attackTransform);
+        _slashEffect.transform.eulerAngles = new Vector3(0, 0, _effectAngle);
+        _slashEffect.transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y);
     }
     void Recoil()
     {

@@ -260,7 +260,7 @@ MonoBehaviour:
     m_Bits: 8
   dashSpeed: 35
   dashTime: 0.2
-  dashCooldown: 0.1
+  dashCooldown: 5
   dashEffect: {fileID: 5451015282086862947, guid: ba5eb875b969f254888ea09e8beada80, type: 3}
   SideAttackTransform: {fileID: 4014875331055232228}
   SideAttackArea: {x: 2, y: 2}
@@ -271,7 +271,7 @@ MonoBehaviour:
   attackableLayer:
     serializedVersion: 2
     m_Bits: 64
-  attackTimerLimit: 0.25
+  attackCooldown: 0.25
   damage1: 1
   damage2: 1
   damage3: 2
@@ -292,9 +292,8 @@ MonoBehaviour:
   DashGod: {fileID: 7140458282178205556, guid: 454b1a5336af5834d829e685d52c04e6, type: 3}
   HealingGod: {fileID: 7685888687327208359, guid: f77b5a67b73928b4288fd8dd1203adfc, type: 3}
   respawnPoint: {fileID: 0}
-  fallThresholdY: {fileID: 0}
-  HealTimer: 10
-  debugTextOn: 1
+  fallThresholdY: -10
+  debugText: {fileID: 0}
   pState: {fileID: 0}
 --- !u!95 &8620837398605670464
 Animator:
@@ -340,7 +339,6 @@ MonoBehaviour:
   lookingRight: 0
   invincible: 0
   IsGrounded: 0
-  GroundLock: 0
 --- !u!111 &3091570799832621488
 Animation:
   m_ObjectHideFlags: 0

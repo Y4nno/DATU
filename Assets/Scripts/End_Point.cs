@@ -6,7 +6,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SceneController.Instance.NextLevel();
+            SceneController.instance.NextLevel();
         }
     }
 }

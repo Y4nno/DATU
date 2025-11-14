@@ -23,6 +23,9 @@ public class EnemyRanged : Enemy
     private bool isDead;
 
     private Animator anim;    
+    private SpriteRenderer sr;
+
+
 
     protected void Start()
     {
