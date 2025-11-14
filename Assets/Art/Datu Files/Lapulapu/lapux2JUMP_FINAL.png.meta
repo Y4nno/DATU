@@ -142,7 +142,7 @@ TextureImporter:
         width: 42
         height: 46
       alignment: 9
-      pivot: {x: 0.75, y: 0.82}
+      pivot: {x: 0.5078063, y: 0.82000005}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,12 +159,12 @@ TextureImporter:
       name: lapux2JUMP_FINAL_2
       rect:
         serializedVersion: 2
-        x: 155
+        x: 156
         y: 35
         width: 42
         height: 46
       alignment: 9
-      pivot: {x: 0.75, y: 0.82}
+      pivot: {x: 0.49538603, y: 0.8086599}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -186,7 +186,7 @@ TextureImporter:
         width: 54
         height: 41
       alignment: 9
-      pivot: {x: 0.75, y: 0.82}
+      pivot: {x: 0.5857776, y: 0.807277}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -208,7 +208,7 @@ TextureImporter:
         width: 54
         height: 41
       alignment: 9
-      pivot: {x: 0.75, y: 0.82}
+      pivot: {x: 0.58094734, y: 0.8009154}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

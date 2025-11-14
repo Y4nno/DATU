@@ -271,7 +271,7 @@ MonoBehaviour:
   attackableLayer:
     serializedVersion: 2
     m_Bits: 64
-  attackCooldown: 0.25
+  attackTimerLimit: 0.25
   damage1: 1
   damage2: 1
   damage3: 2
@@ -292,8 +292,9 @@ MonoBehaviour:
   DashGod: {fileID: 7140458282178205556, guid: 454b1a5336af5834d829e685d52c04e6, type: 3}
   HealingGod: {fileID: 7685888687327208359, guid: f77b5a67b73928b4288fd8dd1203adfc, type: 3}
   respawnPoint: {fileID: 0}
-  fallThresholdY: -10
-  debugText: {fileID: 0}
+  fallThresholdY: {fileID: 0}
+  HealTimer: 10
+  debugTextOn: 1
   pState: {fileID: 0}
 --- !u!95 &8620837398605670464
 Animator:
@@ -339,6 +340,7 @@ MonoBehaviour:
   lookingRight: 0
   invincible: 0
   IsGrounded: 0
+  GroundLock: 0
 --- !u!111 &3091570799832621488
 Animation:
   m_ObjectHideFlags: 0

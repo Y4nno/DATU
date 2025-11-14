@@ -14,30 +14,25 @@ public class HealthUI : MonoBehaviour
 
     private List<Image> hearts = new List<Image>();
     private MessyController player;
-    private static HealthUI instance;
+    public static HealthUI Instance {get; private set;}
     private bool hasInitialized = false;
 
-    void Awake()
+       void Awake()
     {
-        Debug.Log("HealthUI Awake called");
-
-        if (instance == null)
+        if (Instance != null && Instance != this)
         {
-            instance = this;
-            DontDestroyOnLoad(transform.root.gameObject);
-            Debug.Log("HealthUI set as instance and persisted");
+            Destroy(gameObject);
         }
         else
         {
-            Debug.Log("Duplicate HealthUI found, destroying");
-            Destroy(gameObject);
-            return;
+            Instance = this;
         }
-    }
+    } 
+
 
     void Start()
     {
-        Debug.Log("HealthUI Start called");
+        // Debug.Log("HealthUI Start called");
         player = MessyController.Instance;
 
         if (player == null)
