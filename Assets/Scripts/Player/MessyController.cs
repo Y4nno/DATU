@@ -697,6 +697,21 @@ public class MessyController : MonoBehaviour
         }
     }
 
+    public bool GetCanDash()
+    {
+        return canDash;
+    }
+
+    public bool GetCanUseProjectile()
+    {
+        return canUseProjectile;
+    }
+
+    public bool GetCanHeal()
+    {
+        return canHeal;
+    }
+
     void FireProjectile(Vector2 direction)
     {
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
