@@ -260,7 +260,7 @@ MonoBehaviour:
     m_Bits: 8
   dashSpeed: 35
   dashTime: 0.2
-  dashCooldown: 5
+  dashCooldown: 0.1
   dashEffect: {fileID: 5451015282086862947, guid: ba5eb875b969f254888ea09e8beada80, type: 3}
   SideAttackTransform: {fileID: 4014875331055232228}
   SideAttackArea: {x: 2, y: 2}

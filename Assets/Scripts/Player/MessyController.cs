@@ -147,7 +147,6 @@ public class MessyController : MonoBehaviour
 
     private void Awake()
     {
-        audioManager = AudioManager.Instance;
 
         // Singleton pattern
         if (Instance != null && Instance != this)
@@ -166,6 +165,8 @@ public class MessyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = AudioManager.Instance;
+
         respawnPoint.transform.SetParent(respawnPoint.transform, true);
         fallThresholdY.transform.SetParent(fallThresholdY.transform, true);
         pState = GetComponent<PlayerStateList>();
@@ -243,7 +244,6 @@ public class MessyController : MonoBehaviour
         {
             Heal(healAmount); // heals 2 HP
         }
-
 
         HandleProjectileMode();
 
