@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class OptionsManager : MonoBehaviour
 {
@@ -70,10 +69,5 @@ public class OptionsManager : MonoBehaviour
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
         Time.timeScale = 1f;
-    }
-
-    public void backToMenu()
-    {
-        SceneManager.LoadScene("Main Menu");
     }
 }

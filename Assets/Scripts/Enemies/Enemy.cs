@@ -13,14 +13,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float speed;
     [SerializeField] protected float damage;
 
-    protected SpriteRenderer sr;
-
     protected bool beenHit = false;
 
     protected float recoilTimer;
     protected Rigidbody2D rb;
+    protected SpriteRenderer sr;
     protected AudioManager audioManager;
-    
     //[Header("Health")]
     //[SerializeField][Range(0, 5)] float attack_range = 1;
     //[SerializeField][Range(0, 5)] float attack_delay = 1;
@@ -31,25 +29,22 @@ public class Enemy : MonoBehaviour
     //float player_distance;
     //[SerializeField] bool ready_to_attack;
 
+
+
     public void Init(MessyController player, Vector3 coordinates)
     {
         // populates the private fields of this Enemy object to be used by whatever methods nad logic the enemy class has.
         this.player = player;
         transform.position = coordinates;
-
-        rb = GetComponent<Rigidbody2D>();
-
                 
     }
 
     protected virtual void Awake()
     {
-        sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         player = MessyController.Instance;
-
         audioManager = AudioManager.Instance;
-
     }
 
     protected virtual void Update()
@@ -76,9 +71,11 @@ public class Enemy : MonoBehaviour
     {
         health -= _damageDone;
         beenHit = true;
-        StartCoroutine(HurtEffect());
 
         audioManager.PlaySFX(audioManager.hurt2);
+        StartCoroutine(HurtEffect());
+
+
 
         if (!isRecoiling)
         {
@@ -86,7 +83,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    protected IEnumerator HurtEffect()
+    IEnumerator HurtEffect()
     {
         sr.color = Color.red;
         yield return new WaitForSeconds(0.1f);

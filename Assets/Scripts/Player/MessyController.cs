@@ -120,14 +120,14 @@ public class MessyController : MonoBehaviour
     AudioManager audioManager;
 
     [Header("Heal Settings")]
-    private bool canHeal = false;
+    private bool canHeal = true;
 
     private int healAmount = 2;
 
     [SerializeField] float HealTimer = 10f;
 
     [Header("Debug Settings")]
-    [SerializeField] private bool debugTextOn = true;
+    // [SerializeField] private bool debugTextOn = true;
 
     [Space(5)]
 
@@ -143,8 +143,8 @@ public class MessyController : MonoBehaviour
     //Input Variables
     private float xAxis, yAxis;
     private bool attack = false;
+    private bool block = false;
     public static MessyController Instance { get; private set; }
-
     private void Awake()
     {
 
@@ -219,8 +219,9 @@ public class MessyController : MonoBehaviour
 
         if (pState.dashing) return;
         Flip();
-        bool halt = pState.canMove || !pState.canAttack;
-        if (halt) Move();
+
+
+        Move();
         if (pState.canJump) Jump();
         StartDash();
         Attack();
@@ -298,6 +299,7 @@ public class MessyController : MonoBehaviour
 
         yAxis = Input.GetAxisRaw("Vertical");
         attack = Input.GetMouseButtonDown(0);
+        block = Input.GetMouseButtonDown(1);
     }
 
     void Flip()
@@ -317,7 +319,7 @@ public class MessyController : MonoBehaviour
     private void Move()
     { 
         rb.linearVelocity = new Vector2(walkSpeed * xAxis, rb.linearVelocity.y);
-        anim.SetBool("Walking", rb.linearVelocity.x != 0 && Grounded());
+        if(!pState.canAttack || pState.canMove) anim.SetBool("Walking", rb.linearVelocity.x != 0 && Grounded());
     }
 
     void StartDash()
@@ -357,6 +359,20 @@ public class MessyController : MonoBehaviour
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    private void Block()
+    {
+        if (block)
+        {
+        anim.SetBool("Blocking", true);
+        pState.Blocking = true;
+        } else
+        {
+            anim.SetBool("Blocking", false);
+            pState.Blocking = false;
+        }
+
     }
 
     IEnumerator AttackCooldown()
@@ -563,9 +579,12 @@ public class MessyController : MonoBehaviour
     }
     public void TakeDamage(float _damage)
     {
-        health -= Mathf.RoundToInt(_damage);
-        StartCoroutine(StopTakingDamage());
-        audioManager.PlaySFX(audioManager.hurt);
+
+            health -= Mathf.RoundToInt(_damage);
+            StartCoroutine(StopTakingDamage());
+            audioManager.PlaySFX(audioManager.hurt);
+        
+       
     }
     IEnumerator StopTakingDamage()
     {
@@ -755,5 +774,21 @@ public class MessyController : MonoBehaviour
         summoned.transform.SetParent(transform);
         return summoned;
     }
+
+    public bool GetCanDash()
+    {
+        return canDash;
+    }
+    
+    public bool GetCanUseProjectile()
+    {
+        return canUseProjectile;
+    }
+    
+    public bool GetCanHeal()
+    {
+        return canHeal;
+    }
+
 
 }

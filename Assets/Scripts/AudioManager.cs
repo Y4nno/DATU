@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip background;
     public AudioClip attack;
     public AudioClip attack2;
+    public AudioClip attack3;
     public AudioClip hurt;
     public AudioClip hurt2;
     public AudioClip heal;
